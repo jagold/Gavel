@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06459AB1246F13EC00DAF934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB0246F13EC00DAF934 /* AppDelegate.swift */; };
+		06459AB3246F13EC00DAF934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB2246F13EC00DAF934 /* SceneDelegate.swift */; };
+		06459AB5246F13EC00DAF934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB4246F13EC00DAF934 /* ViewController.swift */; };
+		06459AB8246F13EC00DAF934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459AB6246F13EC00DAF934 /* Main.storyboard */; };
+		06459ABA246F13F600DAF934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06459AB9246F13F600DAF934 /* Assets.xcassets */; };
+		06459ABD246F13F600DAF934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */; };
+		06459AC8246F13F700DAF934 /* legal_talkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AC7246F13F700DAF934 /* legal_talkTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06459AC4246F13F700DAF934 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06459AA5246F13EC00DAF934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06459AAC246F13EC00DAF934;
+			remoteInfo = legal_talk;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06459AAD246F13EC00DAF934 /* legal_talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = legal_talk.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06459AB0246F13EC00DAF934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		06459AB2246F13EC00DAF934 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		06459AB4246F13EC00DAF934 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06459AB7246F13EC00DAF934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		06459AB9246F13F600DAF934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06459ABC246F13F600DAF934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		06459ABE246F13F600DAF934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06459AC3246F13F700DAF934 /* legal_talkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = legal_talkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06459AC7246F13F700DAF934 /* legal_talkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = legal_talkTests.swift; sourceTree = "<group>"; };
+		06459AC9246F13F700DAF934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06459AAA246F13EC00DAF934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06459AC0246F13F700DAF934 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06459AA4246F13EC00DAF934 = {
+			isa = PBXGroup;
+			children = (
+				06459AAF246F13EC00DAF934 /* legal_talk */,
+				06459AC6246F13F700DAF934 /* legal_talkTests */,
+				06459AAE246F13EC00DAF934 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06459AAE246F13EC00DAF934 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06459AAD246F13EC00DAF934 /* legal_talk.app */,
+				06459AC3246F13F700DAF934 /* legal_talkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06459AAF246F13EC00DAF934 /* legal_talk */ = {
+			isa = PBXGroup;
+			children = (
+				06459AB0246F13EC00DAF934 /* AppDelegate.swift */,
+				06459AB2246F13EC00DAF934 /* SceneDelegate.swift */,
+				06459AB4246F13EC00DAF934 /* ViewController.swift */,
+				06459AB6246F13EC00DAF934 /* Main.storyboard */,
+				06459AB9246F13F600DAF934 /* Assets.xcassets */,
+				06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */,
+				06459ABE246F13F600DAF934 /* Info.plist */,
+			);
+			path = legal_talk;
+			sourceTree = "<group>";
+		};
+		06459AC6246F13F700DAF934 /* legal_talkTests */ = {
+			isa = PBXGroup;
+			children = (
+				06459AC7246F13F700DAF934 /* legal_talkTests.swift */,
+				06459AC9246F13F700DAF934 /* Info.plist */,
+			);
+			path = legal_talkTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06459AAC246F13EC00DAF934 /* legal_talk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06459ACC246F13F700DAF934 /* Build configuration list for PBXNativeTarget "legal_talk" */;
+			buildPhases = (
+				06459AA9246F13EC00DAF934 /* Sources */,
+				06459AAA246F13EC00DAF934 /* Frameworks */,
+				06459AAB246F13EC00DAF934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = legal_talk;
+			productName = legal_talk;
+			productReference = 06459AAD246F13EC00DAF934 /* legal_talk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06459AC2246F13F700DAF934 /* legal_talkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06459ACF246F13F700DAF934 /* Build configuration list for PBXNativeTarget "legal_talkTests" */;
+			buildPhases = (
+				06459ABF246F13F700DAF934 /* Sources */,
+				06459AC0246F13F700DAF934 /* Frameworks */,
+				06459AC1246F13F700DAF934 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06459AC5246F13F700DAF934 /* PBXTargetDependency */,
+			);
+			name = legal_talkTests;
+			productName = legal_talkTests;
+			productReference = 06459AC3246F13F700DAF934 /* legal_talkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06459AA5246F13EC00DAF934 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Jack;
+				TargetAttributes = {
+					06459AAC246F13EC00DAF934 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					06459AC2246F13F700DAF934 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 06459AAC246F13EC00DAF934;
+					};
+				};
+			};
+			buildConfigurationList = 06459AA8246F13EC00DAF934 /* Build configuration list for PBXProject "legal_talk" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06459AA4246F13EC00DAF934;
+			productRefGroup = 06459AAE246F13EC00DAF934 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06459AAC246F13EC00DAF934 /* legal_talk */,
+				06459AC2246F13F700DAF934 /* legal_talkTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06459AAB246F13EC00DAF934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06459ABD246F13F600DAF934 /* LaunchScreen.storyboard in Resources */,
+				06459ABA246F13F600DAF934 /* Assets.xcassets in Resources */,
+				06459AB8246F13EC00DAF934 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06459AC1246F13F700DAF934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06459AA9246F13EC00DAF934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06459AB5246F13EC00DAF934 /* ViewController.swift in Sources */,
+				06459AB1246F13EC00DAF934 /* AppDelegate.swift in Sources */,
+				06459AB3246F13EC00DAF934 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06459ABF246F13F700DAF934 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06459AC8246F13F700DAF934 /* legal_talkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06459AC5246F13F700DAF934 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06459AAC246F13EC00DAF934 /* legal_talk */;
+			targetProxy = 06459AC4246F13F700DAF934 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		06459AB6246F13EC00DAF934 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06459AB7246F13EC00DAF934 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				06459ABC246F13F600DAF934 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		06459ACA246F13F700DAF934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06459ACB246F13F700DAF934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06459ACD246F13F700DAF934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = legal_talk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JackG.legal-talk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06459ACE246F13F700DAF934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = legal_talk/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JackG.legal-talk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		06459AD0246F13F700DAF934 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = legal_talkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JackG.legal-talkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/legal_talk.app/legal_talk";
+			};
+			name = Debug;
+		};
+		06459AD1246F13F700DAF934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = legal_talkTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JackG.legal-talkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/legal_talk.app/legal_talk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06459AA8246F13EC00DAF934 /* Build configuration list for PBXProject "legal_talk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06459ACA246F13F700DAF934 /* Debug */,
+				06459ACB246F13F700DAF934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06459ACC246F13F700DAF934 /* Build configuration list for PBXNativeTarget "legal_talk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06459ACD246F13F700DAF934 /* Debug */,
+				06459ACE246F13F700DAF934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06459ACF246F13F700DAF934 /* Build configuration list for PBXNativeTarget "legal_talkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06459AD0246F13F700DAF934 /* Debug */,
+				06459AD1246F13F700DAF934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06459AA5246F13EC00DAF934 /* Project object */;
+}
