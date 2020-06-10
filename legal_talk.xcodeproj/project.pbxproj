@@ -3,17 +3,55 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06282C10248FBE070067E1B2 /* TreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */; };
+		06282C12249022FF0067E1B2 /* DoctorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C11249022FF0067E1B2 /* DoctorDetail.swift */; };
 		06459AB1246F13EC00DAF934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB0246F13EC00DAF934 /* AppDelegate.swift */; };
 		06459AB3246F13EC00DAF934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB2246F13EC00DAF934 /* SceneDelegate.swift */; };
-		06459AB5246F13EC00DAF934 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB4246F13EC00DAF934 /* ViewController.swift */; };
+		06459AB5246F13EC00DAF934 /* ClientMedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB4246F13EC00DAF934 /* ClientMedMenu.swift */; };
 		06459AB8246F13EC00DAF934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459AB6246F13EC00DAF934 /* Main.storyboard */; };
 		06459ABA246F13F600DAF934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06459AB9246F13F600DAF934 /* Assets.xcassets */; };
 		06459ABD246F13F600DAF934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */; };
 		06459AC8246F13F700DAF934 /* legal_talkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AC7246F13F700DAF934 /* legal_talkTests.swift */; };
+		06459ADD246F233800DAF934 /* LogTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459ADC246F233800DAF934 /* LogTreatment.swift */; };
+		06459ADF246F28EA00DAF934 /* MyDoctorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459ADE246F28EA00DAF934 /* MyDoctorsList.swift */; };
+		06459AE3246F298000DAF934 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE2246F298000DAF934 /* Doctor.swift */; };
+		06459AE5246F299300DAF934 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE4246F299300DAF934 /* Treatment.swift */; };
+		06459AE7246F2BAF00DAF934 /* AddNewDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE6246F2BAF00DAF934 /* AddNewDoctor.swift */; };
+		06459AE9247031B100DAF934 /* DoctorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE8247031B100DAF934 /* DoctorTableCell.swift */; };
+		06459AED2470CAD500DAF934 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AEC2470CAD500DAF934 /* Doctors.swift */; };
+		06459B2E2471627300DAF934 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B2D2471627200DAF934 /* DataModel.swift */; };
+		06459B302472CEDF00DAF934 /* TreatmentHistoryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */; };
+		06459B322472CF2600DAF934 /* TreatmentHistoryCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */; };
+		06459B362474283300DAF934 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 06459B352474283300DAF934 /* awsconfiguration.json */; };
+		06459B3E2476D7FE00DAF934 /* server_handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B3D2476D7FD00DAF934 /* server_handler.swift */; };
+		065EBA73248E6B6E00967105 /* ClientsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA72248E6B6E00967105 /* ClientsHistory.swift */; };
+		065EBA75248E6C3500967105 /* ClientsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */; };
+		065EBA77248E858600967105 /* DoctorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA76248E858600967105 /* DoctorInput.swift */; };
+		065EBA79248E859D00967105 /* ProviderInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA78248E859D00967105 /* ProviderInput.swift */; };
+		065EBA7B248E85BF00967105 /* DateInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA7A248E85BF00967105 /* DateInput.swift */; };
+		065EBA7D248E85D900967105 /* TreatmentDescriptionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA7C248E85D900967105 /* TreatmentDescriptionInput.swift */; };
+		065EBA7F248E8A1C00967105 /* ClientMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA7E248E8A1C00967105 /* ClientMenu.swift */; };
+		065EBA82248EB9D900967105 /* ScheduleTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA81248EB9D900967105 /* ScheduleTreatment.swift */; };
+		065EBA84248ECB6000967105 /* LegalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA83248ECB6000967105 /* LegalInfo.swift */; };
+		066392ED248D8D4F008202BF /* ClientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066392EC248D8D4F008202BF /* ClientInfo.swift */; };
+		06B657ED247C827100D0A2B8 /* AttorneyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */; };
+		06B657EF247C835400D0A2B8 /* NewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657EE247C835400D0A2B8 /* NewClient.swift */; };
+		06B657F1247C83AC00D0A2B8 /* ClientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657F0247C83AC00D0A2B8 /* ClientList.swift */; };
+		06B657F3247C83E500D0A2B8 /* ClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657F2247C83E500D0A2B8 /* ClientCell.swift */; };
+		06B657F5247D5B4100D0A2B8 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657F4247D5B4100D0A2B8 /* Client.swift */; };
+		06B657F7247EEE4D00D0A2B8 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657F6247EEE4D00D0A2B8 /* Auth.swift */; };
+		06B657FB2480192D00D0A2B8 /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 06B657FA2480192D00D0A2B8 /* amplifyconfiguration.json */; };
+		06B657FD248143E400D0A2B8 /* UserSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657FC248143E300D0A2B8 /* UserSetUp.swift */; };
+		06B657FF2481C1EA00D0A2B8 /* ClientSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */; };
+		06B658012481C21300D0A2B8 /* AttorneySetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B658002481C21300D0A2B8 /* AttorneySetUp.swift */; };
+		06B658032481E4B100D0A2B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B658022481E4B000D0A2B8 /* API.swift */; };
+		06B6580A2481EF5F00D0A2B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B658092481EF5F00D0A2B8 /* API.swift */; };
+		59117B6FB9FC2A2C0923C2ED /* Pods_legal_talkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4D25A7344C3AD85FC176A1 /* Pods_legal_talkTests.framework */; };
+		D86FABCB2AE86C467F05EE60 /* Pods_legal_talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E0AA84FAB86C1AA4092680 /* Pods_legal_talk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +65,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDetail.swift; sourceTree = "<group>"; };
+		06282C11249022FF0067E1B2 /* DoctorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetail.swift; sourceTree = "<group>"; };
 		06459AAD246F13EC00DAF934 /* legal_talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = legal_talk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459AB0246F13EC00DAF934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06459AB2246F13EC00DAF934 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		06459AB4246F13EC00DAF934 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06459AB4246F13EC00DAF934 /* ClientMedMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMedMenu.swift; sourceTree = "<group>"; };
 		06459AB7246F13EC00DAF934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		06459AB9246F13F600DAF934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06459ABC246F13F600DAF934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +78,47 @@
 		06459AC3246F13F700DAF934 /* legal_talkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = legal_talkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459AC7246F13F700DAF934 /* legal_talkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = legal_talkTests.swift; sourceTree = "<group>"; };
 		06459AC9246F13F700DAF934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06459ADC246F233800DAF934 /* LogTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTreatment.swift; sourceTree = "<group>"; };
+		06459ADE246F28EA00DAF934 /* MyDoctorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDoctorsList.swift; sourceTree = "<group>"; };
+		06459AE2246F298000DAF934 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
+		06459AE4246F299300DAF934 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
+		06459AE6246F2BAF00DAF934 /* AddNewDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDoctor.swift; sourceTree = "<group>"; };
+		06459AE8247031B100DAF934 /* DoctorTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableCell.swift; sourceTree = "<group>"; };
+		06459AEC2470CAD500DAF934 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
+		06459B2D2471627200DAF934 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentHistoryTableController.swift; sourceTree = "<group>"; };
+		06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentHistoryCellController.swift; sourceTree = "<group>"; };
+		06459B352474283300DAF934 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../awsconfiguration.json; sourceTree = "<group>"; };
+		06459B3D2476D7FD00DAF934 /* server_handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = server_handler.swift; sourceTree = "<group>"; };
+		065EBA72248E6B6E00967105 /* ClientsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsHistory.swift; sourceTree = "<group>"; };
+		065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsHistoryCell.swift; sourceTree = "<group>"; };
+		065EBA76248E858600967105 /* DoctorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInput.swift; sourceTree = "<group>"; };
+		065EBA78248E859D00967105 /* ProviderInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderInput.swift; sourceTree = "<group>"; };
+		065EBA7A248E85BF00967105 /* DateInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateInput.swift; sourceTree = "<group>"; };
+		065EBA7C248E85D900967105 /* TreatmentDescriptionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDescriptionInput.swift; sourceTree = "<group>"; };
+		065EBA7E248E8A1C00967105 /* ClientMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientMenu.swift; sourceTree = "<group>"; };
+		065EBA80248E8D8100967105 /* legal_talk.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = legal_talk.entitlements; sourceTree = "<group>"; };
+		065EBA81248EB9D900967105 /* ScheduleTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTreatment.swift; sourceTree = "<group>"; };
+		065EBA83248ECB6000967105 /* LegalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalInfo.swift; sourceTree = "<group>"; };
+		066392EC248D8D4F008202BF /* ClientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfo.swift; sourceTree = "<group>"; };
+		06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttorneyMenu.swift; sourceTree = "<group>"; };
+		06B657EE247C835400D0A2B8 /* NewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClient.swift; sourceTree = "<group>"; };
+		06B657F0247C83AC00D0A2B8 /* ClientList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientList.swift; sourceTree = "<group>"; };
+		06B657F2247C83E500D0A2B8 /* ClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientCell.swift; sourceTree = "<group>"; };
+		06B657F4247D5B4100D0A2B8 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		06B657F6247EEE4D00D0A2B8 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		06B657FA2480192D00D0A2B8 /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
+		06B657FC248143E300D0A2B8 /* UserSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetUp.swift; sourceTree = "<group>"; };
+		06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSetUp.swift; sourceTree = "<group>"; };
+		06B658002481C21300D0A2B8 /* AttorneySetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttorneySetUp.swift; sourceTree = "<group>"; };
+		06B658022481E4B000D0A2B8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
+		06B658092481EF5F00D0A2B8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
+		0A4D25A7344C3AD85FC176A1 /* Pods_legal_talkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_legal_talkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2399A487C68EE12013CE07BD /* Pods-legal_talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legal_talk.debug.xcconfig"; path = "Target Support Files/Pods-legal_talk/Pods-legal_talk.debug.xcconfig"; sourceTree = "<group>"; };
+		51292E81743D84E70550DD73 /* Pods-legal_talkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legal_talkTests.debug.xcconfig"; path = "Target Support Files/Pods-legal_talkTests/Pods-legal_talkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		87E0AA84FAB86C1AA4092680 /* Pods_legal_talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_legal_talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FBE736460991011C12E0671 /* Pods-legal_talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legal_talk.release.xcconfig"; path = "Target Support Files/Pods-legal_talk/Pods-legal_talk.release.xcconfig"; sourceTree = "<group>"; };
+		CE7DA1B23D3EF8DA34414DE4 /* Pods-legal_talkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legal_talkTests.release.xcconfig"; path = "Target Support Files/Pods-legal_talkTests/Pods-legal_talkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D86FABCB2AE86C467F05EE60 /* Pods_legal_talk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59117B6FB9FC2A2C0923C2ED /* Pods_legal_talkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +147,9 @@
 				06459AAF246F13EC00DAF934 /* legal_talk */,
 				06459AC6246F13F700DAF934 /* legal_talkTests */,
 				06459AAE246F13EC00DAF934 /* Products */,
+				5972DAAA5C548825301370F2 /* Pods */,
+				CF3DED21902C58BA280F17A2 /* Frameworks */,
+				06B658082481EF3E00D0A2B8 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,9 +165,45 @@
 		06459AAF246F13EC00DAF934 /* legal_talk */ = {
 			isa = PBXGroup;
 			children = (
+				065EBA80248E8D8100967105 /* legal_talk.entitlements */,
+				06459B352474283300DAF934 /* awsconfiguration.json */,
+				06B657FA2480192D00D0A2B8 /* amplifyconfiguration.json */,
+				06B658092481EF5F00D0A2B8 /* API.swift */,
 				06459AB0246F13EC00DAF934 /* AppDelegate.swift */,
 				06459AB2246F13EC00DAF934 /* SceneDelegate.swift */,
-				06459AB4246F13EC00DAF934 /* ViewController.swift */,
+				06459B2D2471627200DAF934 /* DataModel.swift */,
+				06459AB4246F13EC00DAF934 /* ClientMedMenu.swift */,
+				06459ADC246F233800DAF934 /* LogTreatment.swift */,
+				06459AEC2470CAD500DAF934 /* Doctors.swift */,
+				06459ADE246F28EA00DAF934 /* MyDoctorsList.swift */,
+				06459AE6246F2BAF00DAF934 /* AddNewDoctor.swift */,
+				06459AE8247031B100DAF934 /* DoctorTableCell.swift */,
+				06459AE2246F298000DAF934 /* Doctor.swift */,
+				06459AE4246F299300DAF934 /* Treatment.swift */,
+				06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */,
+				06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */,
+				06B657F4247D5B4100D0A2B8 /* Client.swift */,
+				06B657F0247C83AC00D0A2B8 /* ClientList.swift */,
+				065EBA81248EB9D900967105 /* ScheduleTreatment.swift */,
+				06B657F2247C83E500D0A2B8 /* ClientCell.swift */,
+				066392EC248D8D4F008202BF /* ClientInfo.swift */,
+				06459B3D2476D7FD00DAF934 /* server_handler.swift */,
+				06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */,
+				06B657EE247C835400D0A2B8 /* NewClient.swift */,
+				065EBA7E248E8A1C00967105 /* ClientMenu.swift */,
+				06B657F6247EEE4D00D0A2B8 /* Auth.swift */,
+				065EBA76248E858600967105 /* DoctorInput.swift */,
+				065EBA78248E859D00967105 /* ProviderInput.swift */,
+				065EBA7A248E85BF00967105 /* DateInput.swift */,
+				065EBA7C248E85D900967105 /* TreatmentDescriptionInput.swift */,
+				06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */,
+				06282C11249022FF0067E1B2 /* DoctorDetail.swift */,
+				065EBA83248ECB6000967105 /* LegalInfo.swift */,
+				06B657FC248143E300D0A2B8 /* UserSetUp.swift */,
+				06B658002481C21300D0A2B8 /* AttorneySetUp.swift */,
+				06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */,
+				065EBA72248E6B6E00967105 /* ClientsHistory.swift */,
+				065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */,
 				06459AB6246F13EC00DAF934 /* Main.storyboard */,
 				06459AB9246F13F600DAF934 /* Assets.xcassets */,
 				06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */,
@@ -99,6 +221,34 @@
 			path = legal_talkTests;
 			sourceTree = "<group>";
 		};
+		06B658082481EF3E00D0A2B8 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				06B658022481E4B000D0A2B8 /* API.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		5972DAAA5C548825301370F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2399A487C68EE12013CE07BD /* Pods-legal_talk.debug.xcconfig */,
+				8FBE736460991011C12E0671 /* Pods-legal_talk.release.xcconfig */,
+				51292E81743D84E70550DD73 /* Pods-legal_talkTests.debug.xcconfig */,
+				CE7DA1B23D3EF8DA34414DE4 /* Pods-legal_talkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CF3DED21902C58BA280F17A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87E0AA84FAB86C1AA4092680 /* Pods_legal_talk.framework */,
+				0A4D25A7344C3AD85FC176A1 /* Pods_legal_talkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06459ACC246F13F700DAF934 /* Build configuration list for PBXNativeTarget "legal_talk" */;
 			buildPhases = (
+				E6BA812C049A8651A6E01EA8 /* [CP] Check Pods Manifest.lock */,
 				06459AA9246F13EC00DAF934 /* Sources */,
 				06459AAA246F13EC00DAF934 /* Frameworks */,
 				06459AAB246F13EC00DAF934 /* Resources */,
+				577D8080B376BFFFDCD03427 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -123,6 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06459ACF246F13F700DAF934 /* Build configuration list for PBXNativeTarget "legal_talkTests" */;
 			buildPhases = (
+				5D00FC12686AA0A0A2E8E9DE /* [CP] Check Pods Manifest.lock */,
 				06459ABF246F13F700DAF934 /* Sources */,
 				06459AC0246F13F700DAF934 /* Frameworks */,
 				06459AC1246F13F700DAF934 /* Resources */,
@@ -180,7 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06459B362474283300DAF934 /* awsconfiguration.json in Resources */,
 				06459ABD246F13F600DAF934 /* LaunchScreen.storyboard in Resources */,
+				06B657FB2480192D00D0A2B8 /* amplifyconfiguration.json in Resources */,
 				06459ABA246F13F600DAF934 /* Assets.xcassets in Resources */,
 				06459AB8246F13EC00DAF934 /* Main.storyboard in Resources */,
 			);
@@ -195,14 +350,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		577D8080B376BFFFDCD03427 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-legal_talk/Pods-legal_talk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-legal_talk/Pods-legal_talk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-legal_talk/Pods-legal_talk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D00FC12686AA0A0A2E8E9DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-legal_talkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6BA812C049A8651A6E01EA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-legal_talk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		06459AA9246F13EC00DAF934 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06459AB5246F13EC00DAF934 /* ViewController.swift in Sources */,
+				06B657FD248143E400D0A2B8 /* UserSetUp.swift in Sources */,
+				06282C10248FBE070067E1B2 /* TreatmentDetail.swift in Sources */,
+				06B657F1247C83AC00D0A2B8 /* ClientList.swift in Sources */,
+				065EBA7D248E85D900967105 /* TreatmentDescriptionInput.swift in Sources */,
+				06459AED2470CAD500DAF934 /* Doctors.swift in Sources */,
+				06282C12249022FF0067E1B2 /* DoctorDetail.swift in Sources */,
+				065EBA75248E6C3500967105 /* ClientsHistoryCell.swift in Sources */,
+				065EBA82248EB9D900967105 /* ScheduleTreatment.swift in Sources */,
+				06459AB5246F13EC00DAF934 /* ClientMedMenu.swift in Sources */,
+				06459B322472CF2600DAF934 /* TreatmentHistoryCellController.swift in Sources */,
+				06459B2E2471627300DAF934 /* DataModel.swift in Sources */,
+				065EBA79248E859D00967105 /* ProviderInput.swift in Sources */,
+				06B657FF2481C1EA00D0A2B8 /* ClientSetUp.swift in Sources */,
 				06459AB1246F13EC00DAF934 /* AppDelegate.swift in Sources */,
 				06459AB3246F13EC00DAF934 /* SceneDelegate.swift in Sources */,
+				06459ADD246F233800DAF934 /* LogTreatment.swift in Sources */,
+				06B657ED247C827100D0A2B8 /* AttorneyMenu.swift in Sources */,
+				06459B302472CEDF00DAF934 /* TreatmentHistoryTableController.swift in Sources */,
+				06B657F7247EEE4D00D0A2B8 /* Auth.swift in Sources */,
+				065EBA77248E858600967105 /* DoctorInput.swift in Sources */,
+				065EBA84248ECB6000967105 /* LegalInfo.swift in Sources */,
+				06B657EF247C835400D0A2B8 /* NewClient.swift in Sources */,
+				06459AE7246F2BAF00DAF934 /* AddNewDoctor.swift in Sources */,
+				065EBA7B248E85BF00967105 /* DateInput.swift in Sources */,
+				06459ADF246F28EA00DAF934 /* MyDoctorsList.swift in Sources */,
+				06459B3E2476D7FE00DAF934 /* server_handler.swift in Sources */,
+				06459AE9247031B100DAF934 /* DoctorTableCell.swift in Sources */,
+				06B658032481E4B100D0A2B8 /* API.swift in Sources */,
+				06B6580A2481EF5F00D0A2B8 /* API.swift in Sources */,
+				066392ED248D8D4F008202BF /* ClientInfo.swift in Sources */,
+				06459AE5246F299300DAF934 /* Treatment.swift in Sources */,
+				06459AE3246F298000DAF934 /* Doctor.swift in Sources */,
+				06B658012481C21300D0A2B8 /* AttorneySetUp.swift in Sources */,
+				065EBA7F248E8A1C00967105 /* ClientMenu.swift in Sources */,
+				06B657F5247D5B4100D0A2B8 /* Client.swift in Sources */,
+				065EBA73248E6B6E00967105 /* ClientsHistory.swift in Sources */,
+				06B657F3247C83E500D0A2B8 /* ClientCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +613,10 @@
 		};
 		06459ACD246F13F700DAF934 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2399A487C68EE12013CE07BD /* Pods-legal_talk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = legal_talk/legal_talk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = legal_talk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -377,8 +632,10 @@
 		};
 		06459ACE246F13F700DAF934 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FBE736460991011C12E0671 /* Pods-legal_talk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = legal_talk/legal_talk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = legal_talk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -394,6 +651,7 @@
 		};
 		06459AD0246F13F700DAF934 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51292E81743D84E70550DD73 /* Pods-legal_talkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -415,6 +673,7 @@
 		};
 		06459AD1246F13F700DAF934 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE7DA1B23D3EF8DA34414DE4 /* Pods-legal_talkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

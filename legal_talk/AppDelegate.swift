@@ -7,14 +7,40 @@
 //
 
 import UIKit
+import AWSAppSync
+import AWSMobileClient
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var appSyncClient: AWSAppSyncClient?
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        do{
+            let cacheConfiguration = try AWSAppSyncCacheConfiguration()
+
+            let appSyncServiceConfig = try AWSAppSyncServiceConfig()
+            let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig:appSyncServiceConfig,cacheConfiguration:cacheConfiguration)
+            appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+            print("Initialized appsync client")
+        }catch {
+            print("error initializing appsync client")
+        }
+        
+        // Initialize AWSMobileClient singleton
+        AWSMobileClient.default().initialize { (userState, error) in
+            if let userState = userState {
+                AWSMobileClient.default().signOut()
+                print("UserState: \(userState.rawValue)")
+            } else if let error = error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+        
+        
         return true
     }
 
