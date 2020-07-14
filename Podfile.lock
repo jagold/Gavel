@@ -1,0 +1,86 @@
+PODS:
+  - AppSyncRealTimeClient (1.1.6):
+    - Starscream (= 3.0.6)
+  - AWSAppSync (3.1.2):
+    - AppSyncRealTimeClient (~> 1.1)
+    - AWSCore (~> 2.13.0)
+    - ReachabilitySwift (~> 5.0.0)
+    - SQLite.swift (~> 0.12.2)
+  - AWSAuthCore (2.13.6):
+    - AWSCore (= 2.13.6)
+  - AWSAuthUI (2.13.6):
+    - AWSAuthCore (= 2.13.6)
+    - AWSCore (= 2.13.6)
+  - AWSCognitoIdentityProvider (2.13.6):
+    - AWSCognitoIdentityProviderASF (= 1.0.1)
+    - AWSCore (= 2.13.6)
+  - AWSCognitoIdentityProviderASF (1.0.1)
+  - AWSCore (2.13.6)
+  - AWSMobileClient (2.13.6):
+    - AWSAuthCore (= 2.13.6)
+    - AWSCognitoIdentityProvider (= 2.13.6)
+  - AWSPinpoint (2.13.6):
+    - AWSCore (= 2.13.6)
+  - AWSUserPoolsSignIn (2.13.6):
+    - AWSAuthCore (= 2.13.6)
+    - AWSCognitoIdentityProvider (= 2.13.6)
+  - FSCalendar (2.8.1)
+  - IQKeyboardManager (6.5.5)
+  - lottie-ios (3.1.8)
+  - ReachabilitySwift (5.0.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
+  - Starscream (3.0.6)
+
+DEPENDENCIES:
+  - AWSAppSync
+  - AWSAuthUI (~> 2.13.0)
+  - AWSMobileClient
+  - AWSMobileClient (~> 2.13.0)
+  - AWSPinpoint
+  - AWSUserPoolsSignIn (~> 2.13.0)
+  - FSCalendar
+  - IQKeyboardManager
+  - lottie-ios
+
+SPEC REPOS:
+  trunk:
+    - AppSyncRealTimeClient
+    - AWSAppSync
+    - AWSAuthCore
+    - AWSAuthUI
+    - AWSCognitoIdentityProvider
+    - AWSCognitoIdentityProviderASF
+    - AWSCore
+    - AWSMobileClient
+    - AWSPinpoint
+    - AWSUserPoolsSignIn
+    - FSCalendar
+    - IQKeyboardManager
+    - lottie-ios
+    - ReachabilitySwift
+    - SQLite.swift
+    - Starscream
+
+SPEC CHECKSUMS:
+  AppSyncRealTimeClient: 4a2ccdc1722750a1f4d76e216f9bfb1cf12f10de
+  AWSAppSync: 4b91c48712913ca4f2bb38273280190e65d59a45
+  AWSAuthCore: 62e92b5ffbd66b8ba0eac471e7f90ccfa76cf63b
+  AWSAuthUI: d3bc970e09f49ebc6355694fbfaa4a0fe3da964c
+  AWSCognitoIdentityProvider: 05f14f7c892df9ff764268d2ac33b4e95288e603
+  AWSCognitoIdentityProviderASF: f94f1a502e72ef3d0a1de93e10bf7a79c8698118
+  AWSCore: 2b6015f278770e745b4863ac5f45e007e647f298
+  AWSMobileClient: 420a899c4691c7f0991daa35daee82a84396ec63
+  AWSPinpoint: 91cc98431e9d46c7e7f53987e180e4f2a9728177
+  AWSUserPoolsSignIn: 81036a9e6516e9ad3d643ca4b1a0baaf0dfd1bf1
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+
+PODFILE CHECKSUM: f4bae8f7e65e81815d66c35482d92b5d8bf6c911
+
+COCOAPODS: 1.9.1

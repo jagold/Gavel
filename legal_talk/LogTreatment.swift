@@ -9,7 +9,7 @@
 import UIKit
 import Combine
 
-class LogTreatment: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,ObservableObject,UITextFieldDelegate {
+class LogTreatment: UIViewController,UIPickerViewDataSource, UIPickerViewDelegate,UITextFieldDelegate {
 
     //MARK: Properties
     //Need to implement the actual logging of the treatment
@@ -64,7 +64,7 @@ class LogTreatment: UIViewController,UIPickerViewDataSource, UIPickerViewDelegat
         
             mainMenuController.Data_Model = self.Data_Model
             
-            self.server_actions.insertTreatment(Username: self.Data_Model.user , Doctor: self.Data_Model.doctorToCSV(Doctor: new_treat.Doctor), Treatment: new_treat.Treatment, Date: self.Data_Model.dateToString(Date: new_treat.Date), Attorney: self.Data_Model.attorney , Name: self.Data_Model.name)
+            self.server_actions.insertTreatment(Username: self.Data_Model.user , Doctor: self.Data_Model.doctorToCSV(Doctor: new_treat.Doctor), Treatment: new_treat.Treatment, Date: self.Data_Model.dateToString(Date: new_treat.Date), Attorney: self.Data_Model.firm , Name: self.Data_Model.name, Provider: "Hardcoded Provider")
             
             
         default:

@@ -7,8 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0604E1DF24B61D4F004A980D /* hammer-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 0604E1DE24B61D4F004A980D /* hammer-1.png */; };
+		0609958A24A3A927001707FC /* LimitationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609958924A3A927001707FC /* LimitationDetail.swift */; };
+		0609959024A3C6B8001707FC /* PopUpWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609958F24A3C6B8001707FC /* PopUpWindow.swift */; };
+		0615F23A24A61E4300186DD3 /* ListAttorneysTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615F23924A61E4300186DD3 /* ListAttorneysTable.swift */; };
+		0615F23C24A61E7300186DD3 /* AttorneyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615F23B24A61E7300186DD3 /* AttorneyCell.swift */; };
+		0615F23E24A7885300186DD3 /* ScheduleDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615F23D24A7885300186DD3 /* ScheduleDoctor.swift */; };
+		0615F24024AA275E00186DD3 /* ScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615F23F24AA275E00186DD3 /* ScheduleProvider.swift */; };
+		0615F24224AB7E3700186DD3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615F24124AB7E3700186DD3 /* Profile.swift */; };
+		0615F24424AB88D800186DD3 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0615F24324AB88D800186DD3 /* Notifications.swift */; };
 		06282C10248FBE070067E1B2 /* TreatmentDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */; };
 		06282C12249022FF0067E1B2 /* DoctorDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C11249022FF0067E1B2 /* DoctorDetail.swift */; };
+		06282C14249134A90067E1B2 /* LogLimitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C13249134A90067E1B2 /* LogLimitation.swift */; };
+		06282C162491394F0067E1B2 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C152491394E0067E1B2 /* Authentication.swift */; };
+		06282C18249147920067E1B2 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C17249147920067E1B2 /* SignUp.swift */; };
+		06282C1A2491718F0067E1B2 /* ConfirmCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C192491718F0067E1B2 /* ConfirmCode.swift */; };
+		06282C1C249294520067E1B2 /* Firm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C1B249294520067E1B2 /* Firm.swift */; };
+		06282C1E2493B0EE0067E1B2 /* NewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C1D2493B0EE0067E1B2 /* NewProvider.swift */; };
+		06282C202493BAC80067E1B2 /* NewDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C1F2493BAC80067E1B2 /* NewDoctor.swift */; };
+		06282C222493CF580067E1B2 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06282C212493CF580067E1B2 /* Provider.swift */; };
 		06459AB1246F13EC00DAF934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB0246F13EC00DAF934 /* AppDelegate.swift */; };
 		06459AB3246F13EC00DAF934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB2246F13EC00DAF934 /* SceneDelegate.swift */; };
 		06459AB5246F13EC00DAF934 /* ClientMedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AB4246F13EC00DAF934 /* ClientMedMenu.swift */; };
@@ -16,18 +33,22 @@
 		06459ABA246F13F600DAF934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06459AB9246F13F600DAF934 /* Assets.xcassets */; };
 		06459ABD246F13F600DAF934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */; };
 		06459AC8246F13F700DAF934 /* legal_talkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AC7246F13F700DAF934 /* legal_talkTests.swift */; };
-		06459ADD246F233800DAF934 /* LogTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459ADC246F233800DAF934 /* LogTreatment.swift */; };
-		06459ADF246F28EA00DAF934 /* MyDoctorsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459ADE246F28EA00DAF934 /* MyDoctorsList.swift */; };
 		06459AE3246F298000DAF934 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE2246F298000DAF934 /* Doctor.swift */; };
 		06459AE5246F299300DAF934 /* Treatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE4246F299300DAF934 /* Treatment.swift */; };
-		06459AE7246F2BAF00DAF934 /* AddNewDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE6246F2BAF00DAF934 /* AddNewDoctor.swift */; };
-		06459AE9247031B100DAF934 /* DoctorTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AE8247031B100DAF934 /* DoctorTableCell.swift */; };
 		06459AED2470CAD500DAF934 /* Doctors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459AEC2470CAD500DAF934 /* Doctors.swift */; };
 		06459B2E2471627300DAF934 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B2D2471627200DAF934 /* DataModel.swift */; };
 		06459B302472CEDF00DAF934 /* TreatmentHistoryTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */; };
 		06459B322472CF2600DAF934 /* TreatmentHistoryCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */; };
 		06459B362474283300DAF934 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 06459B352474283300DAF934 /* awsconfiguration.json */; };
 		06459B3E2476D7FE00DAF934 /* server_handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06459B3D2476D7FD00DAF934 /* server_handler.swift */; };
+		064F1092249583B000CEAA8C /* FirmSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F1091249583B000CEAA8C /* FirmSetUp.swift */; };
+		064F1094249584D300CEAA8C /* FirmMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F1093249584D300CEAA8C /* FirmMenu.swift */; };
+		064F10962495870900CEAA8C /* GenerateFirmCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F10952495870900CEAA8C /* GenerateFirmCode.swift */; };
+		064F1098249D35D200CEAA8C /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F1097249D35D200CEAA8C /* AnimationController.swift */; };
+		064F109A249D361D00CEAA8C /* 23232-check-mark.json in Resources */ = {isa = PBXBuildFile; fileRef = 064F1099249D361C00CEAA8C /* 23232-check-mark.json */; };
+		064F10E124A11DD600CEAA8C /* LimitationTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F10E024A11DD600CEAA8C /* LimitationTableController.swift */; };
+		064F10E324A11E0100CEAA8C /* LimitationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F10E224A11E0100CEAA8C /* LimitationCell.swift */; };
+		064F10E524A11FA900CEAA8C /* Limitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064F10E424A11FA900CEAA8C /* Limitation.swift */; };
 		065EBA73248E6B6E00967105 /* ClientsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA72248E6B6E00967105 /* ClientsHistory.swift */; };
 		065EBA75248E6C3500967105 /* ClientsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */; };
 		065EBA77248E858600967105 /* DoctorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA76248E858600967105 /* DoctorInput.swift */; };
@@ -38,6 +59,17 @@
 		065EBA82248EB9D900967105 /* ScheduleTreatment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA81248EB9D900967105 /* ScheduleTreatment.swift */; };
 		065EBA84248ECB6000967105 /* LegalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065EBA83248ECB6000967105 /* LegalInfo.swift */; };
 		066392ED248D8D4F008202BF /* ClientInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066392EC248D8D4F008202BF /* ClientInfo.swift */; };
+		06690EB324A4D5D30055E5CF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EB224A4D5D30055E5CF /* API.swift */; };
+		06690EB524A4E4040055E5CF /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EB424A4E4040055E5CF /* HalfModalPresentationController.swift */; };
+		06690EBD24A4E4200055E5CF /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EB624A4E41E0055E5CF /* ModalViewController.swift */; };
+		06690EBE24A4E4200055E5CF /* AppNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EB724A4E41E0055E5CF /* AppNavController.swift */; };
+		06690EBF24A4E4200055E5CF /* HalfModalTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EB824A4E41E0055E5CF /* HalfModalTransitionAnimator.swift */; };
+		06690EC024A4E4200055E5CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EB924A4E41F0055E5CF /* ViewController.swift */; };
+		06690EC124A4E4200055E5CF /* HalfModalTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EBA24A4E41F0055E5CF /* HalfModalTransitioningDelegate.swift */; };
+		06690EC324A4E4200055E5CF /* HalfModalInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06690EBC24A4E41F0055E5CF /* HalfModalInteractiveTransition.swift */; };
+		067311E724B7A13800E2FA7A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067311E624B7A13800E2FA7A /* CalendarViewController.swift */; };
+		067311E924B7AA2200E2FA7A /* ScheduleTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067311E824B7AA2200E2FA7A /* ScheduleTableTableViewController.swift */; };
+		067311EB24B7AAC900E2FA7A /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067311EA24B7AAC900E2FA7A /* ScheduleCell.swift */; };
 		06B657ED247C827100D0A2B8 /* AttorneyMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */; };
 		06B657EF247C835400D0A2B8 /* NewClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657EE247C835400D0A2B8 /* NewClient.swift */; };
 		06B657F1247C83AC00D0A2B8 /* ClientList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657F0247C83AC00D0A2B8 /* ClientList.swift */; };
@@ -48,8 +80,7 @@
 		06B657FD248143E400D0A2B8 /* UserSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657FC248143E300D0A2B8 /* UserSetUp.swift */; };
 		06B657FF2481C1EA00D0A2B8 /* ClientSetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */; };
 		06B658012481C21300D0A2B8 /* AttorneySetUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B658002481C21300D0A2B8 /* AttorneySetUp.swift */; };
-		06B658032481E4B100D0A2B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B658022481E4B000D0A2B8 /* API.swift */; };
-		06B6580A2481EF5F00D0A2B8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B658092481EF5F00D0A2B8 /* API.swift */; };
+		06DB36C324ACBF27002CD0BE /* Gavel.json in Resources */ = {isa = PBXBuildFile; fileRef = 06DB36C224ACBF27002CD0BE /* Gavel.json */; };
 		59117B6FB9FC2A2C0923C2ED /* Pods_legal_talkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A4D25A7344C3AD85FC176A1 /* Pods_legal_talkTests.framework */; };
 		D86FABCB2AE86C467F05EE60 /* Pods_legal_talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E0AA84FAB86C1AA4092680 /* Pods_legal_talk.framework */; };
 /* End PBXBuildFile section */
@@ -65,8 +96,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0604E1DE24B61D4F004A980D /* hammer-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hammer-1.png"; sourceTree = "<group>"; };
+		0609958924A3A927001707FC /* LimitationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitationDetail.swift; sourceTree = "<group>"; };
+		0609958F24A3C6B8001707FC /* PopUpWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpWindow.swift; sourceTree = "<group>"; };
+		0615F23924A61E4300186DD3 /* ListAttorneysTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAttorneysTable.swift; sourceTree = "<group>"; };
+		0615F23B24A61E7300186DD3 /* AttorneyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttorneyCell.swift; sourceTree = "<group>"; };
+		0615F23D24A7885300186DD3 /* ScheduleDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDoctor.swift; sourceTree = "<group>"; };
+		0615F23F24AA275E00186DD3 /* ScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleProvider.swift; sourceTree = "<group>"; };
+		0615F24124AB7E3700186DD3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		0615F24324AB88D800186DD3 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentDetail.swift; sourceTree = "<group>"; };
 		06282C11249022FF0067E1B2 /* DoctorDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorDetail.swift; sourceTree = "<group>"; };
+		06282C13249134A90067E1B2 /* LogLimitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLimitation.swift; sourceTree = "<group>"; };
+		06282C152491394E0067E1B2 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		06282C17249147920067E1B2 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		06282C192491718F0067E1B2 /* ConfirmCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfirmCode.swift; path = /Users/Goldberg/Desktop/legal_talk/legal_talk/ConfirmCode.swift; sourceTree = "<absolute>"; };
+		06282C1B249294520067E1B2 /* Firm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firm.swift; sourceTree = "<group>"; };
+		06282C1D2493B0EE0067E1B2 /* NewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProvider.swift; sourceTree = "<group>"; };
+		06282C1F2493BAC80067E1B2 /* NewDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDoctor.swift; sourceTree = "<group>"; };
+		06282C212493CF580067E1B2 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		06459AAD246F13EC00DAF934 /* legal_talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = legal_talk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459AB0246F13EC00DAF934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06459AB2246F13EC00DAF934 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,18 +126,22 @@
 		06459AC3246F13F700DAF934 /* legal_talkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = legal_talkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06459AC7246F13F700DAF934 /* legal_talkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = legal_talkTests.swift; sourceTree = "<group>"; };
 		06459AC9246F13F700DAF934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06459ADC246F233800DAF934 /* LogTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTreatment.swift; sourceTree = "<group>"; };
-		06459ADE246F28EA00DAF934 /* MyDoctorsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDoctorsList.swift; sourceTree = "<group>"; };
 		06459AE2246F298000DAF934 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		06459AE4246F299300DAF934 /* Treatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Treatment.swift; sourceTree = "<group>"; };
-		06459AE6246F2BAF00DAF934 /* AddNewDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDoctor.swift; sourceTree = "<group>"; };
-		06459AE8247031B100DAF934 /* DoctorTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorTableCell.swift; sourceTree = "<group>"; };
 		06459AEC2470CAD500DAF934 /* Doctors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctors.swift; sourceTree = "<group>"; };
 		06459B2D2471627200DAF934 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentHistoryTableController.swift; sourceTree = "<group>"; };
 		06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentHistoryCellController.swift; sourceTree = "<group>"; };
 		06459B352474283300DAF934 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../awsconfiguration.json; sourceTree = "<group>"; };
 		06459B3D2476D7FD00DAF934 /* server_handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = server_handler.swift; sourceTree = "<group>"; };
+		064F1091249583B000CEAA8C /* FirmSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmSetUp.swift; sourceTree = "<group>"; };
+		064F1093249584D300CEAA8C /* FirmMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmMenu.swift; sourceTree = "<group>"; };
+		064F10952495870900CEAA8C /* GenerateFirmCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateFirmCode.swift; sourceTree = "<group>"; };
+		064F1097249D35D200CEAA8C /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
+		064F1099249D361C00CEAA8C /* 23232-check-mark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "23232-check-mark.json"; sourceTree = "<group>"; };
+		064F10E024A11DD600CEAA8C /* LimitationTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitationTableController.swift; sourceTree = "<group>"; };
+		064F10E224A11E0100CEAA8C /* LimitationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitationCell.swift; sourceTree = "<group>"; };
+		064F10E424A11FA900CEAA8C /* Limitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Limitation.swift; sourceTree = "<group>"; };
 		065EBA72248E6B6E00967105 /* ClientsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsHistory.swift; sourceTree = "<group>"; };
 		065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsHistoryCell.swift; sourceTree = "<group>"; };
 		065EBA76248E858600967105 /* DoctorInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorInput.swift; sourceTree = "<group>"; };
@@ -101,6 +153,17 @@
 		065EBA81248EB9D900967105 /* ScheduleTreatment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTreatment.swift; sourceTree = "<group>"; };
 		065EBA83248ECB6000967105 /* LegalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalInfo.swift; sourceTree = "<group>"; };
 		066392EC248D8D4F008202BF /* ClientInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInfo.swift; sourceTree = "<group>"; };
+		06690EB224A4D5D30055E5CF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Miscellaneous/API.swift; sourceTree = "<group>"; };
+		06690EB424A4E4040055E5CF /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
+		06690EB624A4E41E0055E5CF /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		06690EB724A4E41E0055E5CF /* AppNavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavController.swift; sourceTree = "<group>"; };
+		06690EB824A4E41E0055E5CF /* HalfModalTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitionAnimator.swift; sourceTree = "<group>"; };
+		06690EB924A4E41F0055E5CF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		06690EBA24A4E41F0055E5CF /* HalfModalTransitioningDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalTransitioningDelegate.swift; sourceTree = "<group>"; };
+		06690EBC24A4E41F0055E5CF /* HalfModalInteractiveTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfModalInteractiveTransition.swift; sourceTree = "<group>"; };
+		067311E624B7A13800E2FA7A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		067311E824B7AA2200E2FA7A /* ScheduleTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTableTableViewController.swift; sourceTree = "<group>"; };
+		067311EA24B7AAC900E2FA7A /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttorneyMenu.swift; sourceTree = "<group>"; };
 		06B657EE247C835400D0A2B8 /* NewClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewClient.swift; sourceTree = "<group>"; };
 		06B657F0247C83AC00D0A2B8 /* ClientList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientList.swift; sourceTree = "<group>"; };
@@ -112,7 +175,7 @@
 		06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSetUp.swift; sourceTree = "<group>"; };
 		06B658002481C21300D0A2B8 /* AttorneySetUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttorneySetUp.swift; sourceTree = "<group>"; };
 		06B658022481E4B000D0A2B8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
-		06B658092481EF5F00D0A2B8 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = SOURCE_ROOT; };
+		06DB36C224ACBF27002CD0BE /* Gavel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Gavel.json; sourceTree = "<group>"; };
 		0A4D25A7344C3AD85FC176A1 /* Pods_legal_talkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_legal_talkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2399A487C68EE12013CE07BD /* Pods-legal_talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legal_talk.debug.xcconfig"; path = "Target Support Files/Pods-legal_talk/Pods-legal_talk.debug.xcconfig"; sourceTree = "<group>"; };
 		51292E81743D84E70550DD73 /* Pods-legal_talkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-legal_talkTests.debug.xcconfig"; path = "Target Support Files/Pods-legal_talkTests/Pods-legal_talkTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +204,114 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0609959224A4D0FC001707FC /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				065EBA7E248E8A1C00967105 /* ClientMenu.swift */,
+				065EBA83248ECB6000967105 /* LegalInfo.swift */,
+				06459AB4246F13EC00DAF934 /* ClientMedMenu.swift */,
+				06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */,
+				06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */,
+				064F10E024A11DD600CEAA8C /* LimitationTableController.swift */,
+				064F10E224A11E0100CEAA8C /* LimitationCell.swift */,
+				0609958924A3A927001707FC /* LimitationDetail.swift */,
+				065EBA81248EB9D900967105 /* ScheduleTreatment.swift */,
+				0615F23F24AA275E00186DD3 /* ScheduleProvider.swift */,
+				0615F23D24A7885300186DD3 /* ScheduleDoctor.swift */,
+				065EBA78248E859D00967105 /* ProviderInput.swift */,
+				06282C1D2493B0EE0067E1B2 /* NewProvider.swift */,
+				065EBA76248E858600967105 /* DoctorInput.swift */,
+				06282C1F2493BAC80067E1B2 /* NewDoctor.swift */,
+				065EBA7A248E85BF00967105 /* DateInput.swift */,
+				065EBA7C248E85D900967105 /* TreatmentDescriptionInput.swift */,
+				06282C13249134A90067E1B2 /* LogLimitation.swift */,
+				067311E624B7A13800E2FA7A /* CalendarViewController.swift */,
+				067311E824B7AA2200E2FA7A /* ScheduleTableTableViewController.swift */,
+				067311EA24B7AAC900E2FA7A /* ScheduleCell.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		0609959324A4D188001707FC /* Attorney */ = {
+			isa = PBXGroup;
+			children = (
+				06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */,
+				06B657F0247C83AC00D0A2B8 /* ClientList.swift */,
+				06B657F2247C83E500D0A2B8 /* ClientCell.swift */,
+				065EBA72248E6B6E00967105 /* ClientsHistory.swift */,
+				065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */,
+				066392EC248D8D4F008202BF /* ClientInfo.swift */,
+				06B657EE247C835400D0A2B8 /* NewClient.swift */,
+				06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */,
+				06282C11249022FF0067E1B2 /* DoctorDetail.swift */,
+			);
+			path = Attorney;
+			sourceTree = "<group>";
+		};
+		0609959424A4D1BA001707FC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0604E1DE24B61D4F004A980D /* hammer-1.png */,
+				06459B2D2471627200DAF934 /* DataModel.swift */,
+				06459B3D2476D7FD00DAF934 /* server_handler.swift */,
+				06282C1B249294520067E1B2 /* Firm.swift */,
+				06459AEC2470CAD500DAF934 /* Doctors.swift */,
+				06459AE2246F298000DAF934 /* Doctor.swift */,
+				06459AE4246F299300DAF934 /* Treatment.swift */,
+				06B657F4247D5B4100D0A2B8 /* Client.swift */,
+				06282C212493CF580067E1B2 /* Provider.swift */,
+				064F10E424A11FA900CEAA8C /* Limitation.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0609959524A4D21E001707FC /* Firm */ = {
+			isa = PBXGroup;
+			children = (
+				064F1093249584D300CEAA8C /* FirmMenu.swift */,
+				064F10952495870900CEAA8C /* GenerateFirmCode.swift */,
+				0615F23924A61E4300186DD3 /* ListAttorneysTable.swift */,
+				0615F23B24A61E7300186DD3 /* AttorneyCell.swift */,
+			);
+			path = Firm;
+			sourceTree = "<group>";
+		};
+		0609959624A4D25C001707FC /* User Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				06B657F6247EEE4D00D0A2B8 /* Auth.swift */,
+				06B657FC248143E300D0A2B8 /* UserSetUp.swift */,
+				064F1091249583B000CEAA8C /* FirmSetUp.swift */,
+				06B658002481C21300D0A2B8 /* AttorneySetUp.swift */,
+				06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */,
+			);
+			path = "User Authentication";
+			sourceTree = "<group>";
+		};
+		0609959724A4D284001707FC /* Alternate Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				06282C17249147920067E1B2 /* SignUp.swift */,
+				06282C192491718F0067E1B2 /* ConfirmCode.swift */,
+				06282C152491394E0067E1B2 /* Authentication.swift */,
+			);
+			path = "Alternate Authentication";
+			sourceTree = "<group>";
+		};
+		0609959824A4D2C0001707FC /* Miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				06690EC424A4E4440055E5CF /* BottomPopUp */,
+				064F1097249D35D200CEAA8C /* AnimationController.swift */,
+				0609958F24A3C6B8001707FC /* PopUpWindow.swift */,
+				064F1099249D361C00CEAA8C /* 23232-check-mark.json */,
+				06DB36C224ACBF27002CD0BE /* Gavel.json */,
+				0615F24124AB7E3700186DD3 /* Profile.swift */,
+				0615F24324AB88D800186DD3 /* Notifications.swift */,
+			);
+			path = Miscellaneous;
+			sourceTree = "<group>";
+		};
 		06459AA4246F13EC00DAF934 = {
 			isa = PBXGroup;
 			children = (
@@ -166,44 +337,18 @@
 			isa = PBXGroup;
 			children = (
 				065EBA80248E8D8100967105 /* legal_talk.entitlements */,
+				06690EB224A4D5D30055E5CF /* API.swift */,
 				06459B352474283300DAF934 /* awsconfiguration.json */,
 				06B657FA2480192D00D0A2B8 /* amplifyconfiguration.json */,
-				06B658092481EF5F00D0A2B8 /* API.swift */,
 				06459AB0246F13EC00DAF934 /* AppDelegate.swift */,
 				06459AB2246F13EC00DAF934 /* SceneDelegate.swift */,
-				06459B2D2471627200DAF934 /* DataModel.swift */,
-				06459AB4246F13EC00DAF934 /* ClientMedMenu.swift */,
-				06459ADC246F233800DAF934 /* LogTreatment.swift */,
-				06459AEC2470CAD500DAF934 /* Doctors.swift */,
-				06459ADE246F28EA00DAF934 /* MyDoctorsList.swift */,
-				06459AE6246F2BAF00DAF934 /* AddNewDoctor.swift */,
-				06459AE8247031B100DAF934 /* DoctorTableCell.swift */,
-				06459AE2246F298000DAF934 /* Doctor.swift */,
-				06459AE4246F299300DAF934 /* Treatment.swift */,
-				06459B2F2472CEDF00DAF934 /* TreatmentHistoryTableController.swift */,
-				06459B312472CF2600DAF934 /* TreatmentHistoryCellController.swift */,
-				06B657F4247D5B4100D0A2B8 /* Client.swift */,
-				06B657F0247C83AC00D0A2B8 /* ClientList.swift */,
-				065EBA81248EB9D900967105 /* ScheduleTreatment.swift */,
-				06B657F2247C83E500D0A2B8 /* ClientCell.swift */,
-				066392EC248D8D4F008202BF /* ClientInfo.swift */,
-				06459B3D2476D7FD00DAF934 /* server_handler.swift */,
-				06B657EC247C827100D0A2B8 /* AttorneyMenu.swift */,
-				06B657EE247C835400D0A2B8 /* NewClient.swift */,
-				065EBA7E248E8A1C00967105 /* ClientMenu.swift */,
-				06B657F6247EEE4D00D0A2B8 /* Auth.swift */,
-				065EBA76248E858600967105 /* DoctorInput.swift */,
-				065EBA78248E859D00967105 /* ProviderInput.swift */,
-				065EBA7A248E85BF00967105 /* DateInput.swift */,
-				065EBA7C248E85D900967105 /* TreatmentDescriptionInput.swift */,
-				06282C0F248FBE070067E1B2 /* TreatmentDetail.swift */,
-				06282C11249022FF0067E1B2 /* DoctorDetail.swift */,
-				065EBA83248ECB6000967105 /* LegalInfo.swift */,
-				06B657FC248143E300D0A2B8 /* UserSetUp.swift */,
-				06B658002481C21300D0A2B8 /* AttorneySetUp.swift */,
-				06B657FE2481C1EA00D0A2B8 /* ClientSetUp.swift */,
-				065EBA72248E6B6E00967105 /* ClientsHistory.swift */,
-				065EBA74248E6C3500967105 /* ClientsHistoryCell.swift */,
+				0609959824A4D2C0001707FC /* Miscellaneous */,
+				0609959424A4D1BA001707FC /* Data */,
+				0609959324A4D188001707FC /* Attorney */,
+				0609959224A4D0FC001707FC /* Client */,
+				0609959624A4D25C001707FC /* User Authentication */,
+				0609959524A4D21E001707FC /* Firm */,
+				0609959724A4D284001707FC /* Alternate Authentication */,
 				06459AB6246F13EC00DAF934 /* Main.storyboard */,
 				06459AB9246F13F600DAF934 /* Assets.xcassets */,
 				06459ABB246F13F600DAF934 /* LaunchScreen.storyboard */,
@@ -219,6 +364,20 @@
 				06459AC9246F13F700DAF934 /* Info.plist */,
 			);
 			path = legal_talkTests;
+			sourceTree = "<group>";
+		};
+		06690EC424A4E4440055E5CF /* BottomPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				06690EB724A4E41E0055E5CF /* AppNavController.swift */,
+				06690EBC24A4E41F0055E5CF /* HalfModalInteractiveTransition.swift */,
+				06690EB824A4E41E0055E5CF /* HalfModalTransitionAnimator.swift */,
+				06690EBA24A4E41F0055E5CF /* HalfModalTransitioningDelegate.swift */,
+				06690EB624A4E41E0055E5CF /* ModalViewController.swift */,
+				06690EB924A4E41F0055E5CF /* ViewController.swift */,
+				06690EB424A4E4040055E5CF /* HalfModalPresentationController.swift */,
+			);
+			path = BottomPopUp;
 			sourceTree = "<group>";
 		};
 		06B658082481EF3E00D0A2B8 /* Recovered References */ = {
@@ -335,9 +494,12 @@
 			files = (
 				06459B362474283300DAF934 /* awsconfiguration.json in Resources */,
 				06459ABD246F13F600DAF934 /* LaunchScreen.storyboard in Resources */,
+				064F109A249D361D00CEAA8C /* 23232-check-mark.json in Resources */,
 				06B657FB2480192D00D0A2B8 /* amplifyconfiguration.json in Resources */,
 				06459ABA246F13F600DAF934 /* Assets.xcassets in Resources */,
+				06DB36C324ACBF27002CD0BE /* Gavel.json in Resources */,
 				06459AB8246F13EC00DAF934 /* Main.storyboard in Resources */,
+				0604E1DF24B61D4F004A980D /* hammer-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,38 +586,66 @@
 				06B657F1247C83AC00D0A2B8 /* ClientList.swift in Sources */,
 				065EBA7D248E85D900967105 /* TreatmentDescriptionInput.swift in Sources */,
 				06459AED2470CAD500DAF934 /* Doctors.swift in Sources */,
+				0615F23A24A61E4300186DD3 /* ListAttorneysTable.swift in Sources */,
+				064F10962495870900CEAA8C /* GenerateFirmCode.swift in Sources */,
+				06282C1E2493B0EE0067E1B2 /* NewProvider.swift in Sources */,
 				06282C12249022FF0067E1B2 /* DoctorDetail.swift in Sources */,
 				065EBA75248E6C3500967105 /* ClientsHistoryCell.swift in Sources */,
+				06282C1C249294520067E1B2 /* Firm.swift in Sources */,
+				064F1092249583B000CEAA8C /* FirmSetUp.swift in Sources */,
+				064F10E124A11DD600CEAA8C /* LimitationTableController.swift in Sources */,
+				06690EB524A4E4040055E5CF /* HalfModalPresentationController.swift in Sources */,
 				065EBA82248EB9D900967105 /* ScheduleTreatment.swift in Sources */,
+				06690EC324A4E4200055E5CF /* HalfModalInteractiveTransition.swift in Sources */,
 				06459AB5246F13EC00DAF934 /* ClientMedMenu.swift in Sources */,
+				0615F24224AB7E3700186DD3 /* Profile.swift in Sources */,
 				06459B322472CF2600DAF934 /* TreatmentHistoryCellController.swift in Sources */,
 				06459B2E2471627300DAF934 /* DataModel.swift in Sources */,
+				0615F23C24A61E7300186DD3 /* AttorneyCell.swift in Sources */,
+				06282C222493CF580067E1B2 /* Provider.swift in Sources */,
 				065EBA79248E859D00967105 /* ProviderInput.swift in Sources */,
+				06690EBE24A4E4200055E5CF /* AppNavController.swift in Sources */,
+				06282C14249134A90067E1B2 /* LogLimitation.swift in Sources */,
+				064F1098249D35D200CEAA8C /* AnimationController.swift in Sources */,
 				06B657FF2481C1EA00D0A2B8 /* ClientSetUp.swift in Sources */,
+				06690EBF24A4E4200055E5CF /* HalfModalTransitionAnimator.swift in Sources */,
+				0615F24424AB88D800186DD3 /* Notifications.swift in Sources */,
+				067311EB24B7AAC900E2FA7A /* ScheduleCell.swift in Sources */,
 				06459AB1246F13EC00DAF934 /* AppDelegate.swift in Sources */,
+				06690EC124A4E4200055E5CF /* HalfModalTransitioningDelegate.swift in Sources */,
 				06459AB3246F13EC00DAF934 /* SceneDelegate.swift in Sources */,
-				06459ADD246F233800DAF934 /* LogTreatment.swift in Sources */,
+				0615F23E24A7885300186DD3 /* ScheduleDoctor.swift in Sources */,
+				067311E724B7A13800E2FA7A /* CalendarViewController.swift in Sources */,
+				06282C162491394F0067E1B2 /* Authentication.swift in Sources */,
 				06B657ED247C827100D0A2B8 /* AttorneyMenu.swift in Sources */,
+				0615F24024AA275E00186DD3 /* ScheduleProvider.swift in Sources */,
+				064F10E324A11E0100CEAA8C /* LimitationCell.swift in Sources */,
 				06459B302472CEDF00DAF934 /* TreatmentHistoryTableController.swift in Sources */,
+				064F10E524A11FA900CEAA8C /* Limitation.swift in Sources */,
+				064F1094249584D300CEAA8C /* FirmMenu.swift in Sources */,
+				0609959024A3C6B8001707FC /* PopUpWindow.swift in Sources */,
 				06B657F7247EEE4D00D0A2B8 /* Auth.swift in Sources */,
 				065EBA77248E858600967105 /* DoctorInput.swift in Sources */,
 				065EBA84248ECB6000967105 /* LegalInfo.swift in Sources */,
+				06282C1A2491718F0067E1B2 /* ConfirmCode.swift in Sources */,
 				06B657EF247C835400D0A2B8 /* NewClient.swift in Sources */,
-				06459AE7246F2BAF00DAF934 /* AddNewDoctor.swift in Sources */,
 				065EBA7B248E85BF00967105 /* DateInput.swift in Sources */,
-				06459ADF246F28EA00DAF934 /* MyDoctorsList.swift in Sources */,
 				06459B3E2476D7FE00DAF934 /* server_handler.swift in Sources */,
-				06459AE9247031B100DAF934 /* DoctorTableCell.swift in Sources */,
-				06B658032481E4B100D0A2B8 /* API.swift in Sources */,
-				06B6580A2481EF5F00D0A2B8 /* API.swift in Sources */,
+				06282C18249147920067E1B2 /* SignUp.swift in Sources */,
 				066392ED248D8D4F008202BF /* ClientInfo.swift in Sources */,
+				06690EBD24A4E4200055E5CF /* ModalViewController.swift in Sources */,
 				06459AE5246F299300DAF934 /* Treatment.swift in Sources */,
 				06459AE3246F298000DAF934 /* Doctor.swift in Sources */,
 				06B658012481C21300D0A2B8 /* AttorneySetUp.swift in Sources */,
 				065EBA7F248E8A1C00967105 /* ClientMenu.swift in Sources */,
+				06690EB324A4D5D30055E5CF /* API.swift in Sources */,
+				06690EC024A4E4200055E5CF /* ViewController.swift in Sources */,
 				06B657F5247D5B4100D0A2B8 /* Client.swift in Sources */,
 				065EBA73248E6B6E00967105 /* ClientsHistory.swift in Sources */,
 				06B657F3247C83E500D0A2B8 /* ClientCell.swift in Sources */,
+				067311E924B7AA2200E2FA7A /* ScheduleTableTableViewController.swift in Sources */,
+				0609958A24A3A927001707FC /* LimitationDetail.swift in Sources */,
+				06282C202493BAC80067E1B2 /* NewDoctor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +808,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = legal_talk/legal_talk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBGNH4QSBU;
 				INFOPLIST_FILE = legal_talk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,6 +828,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = legal_talk/legal_talk.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBGNH4QSBU;
 				INFOPLIST_FILE = legal_talk/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
