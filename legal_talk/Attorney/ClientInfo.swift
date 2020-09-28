@@ -12,6 +12,7 @@ class ClientInfo: UIViewController {
     
     var clientUsername = String()
     var server_action = server_handler()
+
     
     @IBOutlet weak var clientName: UILabel!
     var nameLabel: String?
@@ -25,7 +26,16 @@ class ClientInfo: UIViewController {
         // Do any additional setup after loading the view.
         server_action.fetchFutureTreatmentHistory(userName: self.clientUsername){futureTreatments in
             globalData.futureTreatments = futureTreatments
+            
         }
+        /*
+         calculate compliance rate thusly, globalData.Treatments.count + (globalData.Treatments.count + globalData.didNotAttend.count)
+         
+         make future treatment update to regular treatment in notifications instead of adding ANOTHER treatment
+         Pass the treatment ID in the notification object so the treatment can update. 
+         
+         */
+        
     }
     
 
@@ -46,22 +56,26 @@ class ClientInfo: UIViewController {
     
             clientHistory.currentClient = self.clientUsername
             
-           
-            
+
         case "toLimitations":
             guard let limitationHistory = segue.destination as? LimitationTableController else{
                 fatalError("Unexpected destination")
             }
             
+            limitationHistory.clientName = self.clientUsername
+            
         case "toClientCalendar":
             guard let clientCalendar = segue.destination as? CalendarViewController else{
                 fatalError("Unexpected Destination")
             }
-   
+            
+        case "GeneratePDF":
+            guard let generatePDF = segue.destination as? PDFViewController else{
+                fatalError("Unexpected Destination")
+            }
+            
+            generatePDF.documentData = PDFCreator().prepareData()
 
-            
-            
-                 
         default:
             fatalError("NO hits on segue")
         }

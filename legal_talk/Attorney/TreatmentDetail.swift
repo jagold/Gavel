@@ -26,7 +26,7 @@ class TreatmentDetail: UIViewController, HalfModalPresentable {
                
         self.doctorLabel.setTitle("Doctor: " + globalData.Treatments[treatmentIndex].Doctor.Name, for: .normal)
         self.providerLabel.text = "Provider: " + globalData.Treatments[treatmentIndex].Provider.Name
-        self.providerLabel.isHidden = true
+        //self.providerLabel.isHidden = 
         
         self.view.layoutIfNeeded()
     }

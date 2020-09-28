@@ -1,0 +1,214 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateTreatment(
+  $input: CreateTreatmentInput!
+  $condition: ModelTreatmentConditionInput
+) {
+  createTreatment(input: $input, condition: $condition) {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTreatment(
+  $input: UpdateTreatmentInput!
+  $condition: ModelTreatmentConditionInput
+) {
+  updateTreatment(input: $input, condition: $condition) {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTreatment(
+  $input: DeleteTreatmentInput!
+  $condition: ModelTreatmentConditionInput
+) {
+  deleteTreatment(input: $input, condition: $condition) {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateAttorney(
+  $input: CreateAttorneyInput!
+  $condition: ModelAttorneyConditionInput
+) {
+  createAttorney(input: $input, condition: $condition) {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateAttorney(
+  $input: UpdateAttorneyInput!
+  $condition: ModelAttorneyConditionInput
+) {
+  updateAttorney(input: $input, condition: $condition) {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteAttorney(
+  $input: DeleteAttorneyInput!
+  $condition: ModelAttorneyConditionInput
+) {
+  deleteAttorney(input: $input, condition: $condition) {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateFirm(
+  $input: CreateFirmInput!
+  $condition: ModelFirmConditionInput
+) {
+  createFirm(input: $input, condition: $condition) {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateFirm(
+  $input: UpdateFirmInput!
+  $condition: ModelFirmConditionInput
+) {
+  updateFirm(input: $input, condition: $condition) {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteFirm(
+  $input: DeleteFirmInput!
+  $condition: ModelFirmConditionInput
+) {
+  deleteFirm(input: $input, condition: $condition) {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateLimitation(
+  $input: CreateLimitationInput!
+  $condition: ModelLimitationConditionInput
+) {
+  createLimitation(input: $input, condition: $condition) {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateLimitation(
+  $input: UpdateLimitationInput!
+  $condition: ModelLimitationConditionInput
+) {
+  updateLimitation(input: $input, condition: $condition) {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteLimitation(
+  $input: DeleteLimitationInput!
+  $condition: ModelLimitationConditionInput
+) {
+  deleteLimitation(input: $input, condition: $condition) {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateDocument(
+  $input: CreateDocumentInput!
+  $condition: ModelDocumentConditionInput
+) {
+  createDocument(input: $input, condition: $condition) {
+    id
+    username
+    contractKey
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateDocument(
+  $input: UpdateDocumentInput!
+  $condition: ModelDocumentConditionInput
+) {
+  updateDocument(input: $input, condition: $condition) {
+    id
+    username
+    contractKey
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteDocument(
+  $input: DeleteDocumentInput!
+  $condition: ModelDocumentConditionInput
+) {
+  deleteDocument(input: $input, condition: $condition) {
+    id
+    username
+    contractKey
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}

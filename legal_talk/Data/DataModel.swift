@@ -25,15 +25,21 @@ class DataModel{
     var attorneys: [String]
     var futureTreatments: Dictionary<String,[Treatment]>
     var currentDate : String
+    var documents : [Data]
+    var MissedTreatments : [Treatment]
+    var DocumentList: [Document]
     
     
     init() {
+        self.DocumentList = [Document]()
+        self.documents = [Data]()
         self.currentDate = ""
         self.futureTreatments = [String:[Treatment]]()
         self.Doctors = [Doctor]()
         self.Clients = [Client]()
         self.Providers = [Provider]()
         self.Treatments = [Treatment]()
+        self.MissedTreatments = [Treatment]()
         self.user = "Jack21Goldberg" //After authentication, make this the client username
         self.currrent_code = ""
         self.attorney = ""

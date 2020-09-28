@@ -10,7 +10,7 @@ import UIKit
 import AWSMobileClient
 
 class Auth: UIViewController {
-
+    
     var server_action = server_handler()
 
     var attorney = String()
@@ -19,7 +19,6 @@ class Auth: UIViewController {
     let group = DispatchGroup()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         initializeAWSMobileClient()
        
@@ -34,8 +33,6 @@ class Auth: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
-        
-        
         switch segue.identifier ?? "" {
         case "setUpUser":
             guard let setUpUser = segue.destination as? UserSetUp else{
@@ -47,7 +44,11 @@ class Auth: UIViewController {
                 fatalError("Unexpected destination")
             }
             
-
+            server_action.getDocumentKeys(){docData, docList in
+                globalData.documents = docData
+                globalData.DocumentList = docList
+            }
+            
         case "toAttorneyMenu":
             guard let AttorneyMenu = segue.destination as? UITabBarController else{
                 fatalError("Unexpected Destination")
@@ -84,12 +85,14 @@ class Auth: UIViewController {
     
     
     func initializeAWSMobileClient(){
+        
+        
     
         AWSMobileClient.default().initialize{ (userState, error) in
             
             switch(userState){
             case .signedOut:
-                AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, signInUIOptions: SignInUIOptions(canCancel:false, logoImage: UIImage(named: "hammer-1.png"), backgroundColor: UIColor.white, secondaryBackgroundColor: UIColor.black, primaryColor: UIColor.orange, disableSignUpButton: false)){userName, error  in
+                AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, signInUIOptions: SignInUIOptions(canCancel:false, logoImage: #imageLiteral(resourceName: "Gavel") /*UIImage(named: "hammer-1.png")*/, backgroundColor: UIColor.white, secondaryBackgroundColor: UIColor.black, primaryColor: UIColor.orange, disableSignUpButton: false)){userName, error  in
 
                     
                     
@@ -152,7 +155,7 @@ class Auth: UIViewController {
         
         
         self.group.enter()
-        self.server_action.fetchTreatmentHistory(userName: globalData.user){treatmentArray, doctorList, attorney, name, providers  in
+        self.server_action.fetchTreatmentHistory(userName: globalData.user){treatmentArray,missedList, doctorList, attorney, name, providers  in
                   
                   //Will also have Providers
                   globalData.Treatments = treatmentArray
@@ -165,6 +168,7 @@ class Auth: UIViewController {
                   print(globalData.Providers.count)
                   globalData.Treatments.reverse()
                   globalData.Doctors.reverse()
+                  globalData.MissedTreatments = missedList
                   self.group.leave()
 
                       

@@ -8,6 +8,9 @@
 
 import Foundation
 import AWSAppSync
+import Amplify
+import AmplifyPlugins
+
 class server_handler{
     var appSyncClient: AWSAppSyncClient?
     
@@ -18,12 +21,16 @@ class server_handler{
     }
     
     
-    func insertTreatment(Username: String, Doctor: String, Treatment: String, Date: String, Attorney: String, Name: String, Provider: String){
-            
+    func insertTreatment(Username: String, Doctor: String, Treatment: String, Date: String, Attorney: String, Name: String, Provider: String, completion: @escaping (String) -> () = {_ in}){
+        
+        var treatmentID: String?
+        let group = DispatchGroup()
         let mutationInput = CreateTreatmentInput( username: Username, name: Name, provider: Provider, doctor: Doctor, attorney: Attorney, treatment: Treatment, date: Date)
             
     //        mutationInput.description = "New Description"
         print("Attempting mutation")
+        
+        group.enter()
         appSyncClient?.perform(mutation: CreateTreatmentMutation(input: mutationInput)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
@@ -31,21 +38,30 @@ class server_handler{
             if let resultError = result?.errors {
                 print("Error saving the item on server: \(resultError)")
                 
+            
+                
             }
             print("Mutation complete.")
+            treatmentID =  (result?.data?.createTreatment?.id)!
+            group.leave()
         }
-            
+        
+        group.notify(queue: .main){
+            completion( treatmentID! )
+        }
             
         }
     
 
-    func fetchTreatmentHistory(userName: String, completion: @escaping ([Treatment], [Doctor], String, String, [Provider]) -> Void) {
+    func fetchTreatmentHistory(userName: String, completion: @escaping ([Treatment], [Treatment], [Doctor], String, String, [Provider]) -> Void) {
         
         let selectQuery = ListTreatmentsQuery()
         let dateFormatter = DateFormatter()
         var filter = ModelTreatmentFilterInput()
         var stringInput = ModelStringInput()
         var treatmentList = [Treatment]()
+        var missedList = [Treatment]()
+        
         var providerList = [Provider]()
         var providerSet = Set<String>()
         var doctorSet = Set<String>()
@@ -108,27 +124,41 @@ class server_handler{
                     
                     
                         if($0 != nil){
-                            if($0?.treatment != "Initial Treatment" && $0?.treatment != "Future Treatment"){
+                            if($0?.treatment != "Initial Treatment"  && $0?.treatment != "Future Treatment" && $0?.treatment != "DID NOT ATTEND"){
                                 
                                 var newTreatment = Treatment(Doctor: fetchedDoc, Date: globalData.stringToDate(stringDate: $0?.date ?? "") , Treatment: $0?.treatment ?? "", Provider: globalData.csvtoProvider(csvObject:$0?.provider ?? "No Provider"))
                                 
                                 newTreatment.id = $0!.id
                                 
+                                if ($0!.viewed == "true") {
+                                    newTreatment.viewed = true
+                                }else{
+                                    newTreatment.viewed = false
+                                }
+                                
                                 treatmentList.append(newTreatment)
                                 
+                     
                                 
-                                print(newTreatment.Treatment)
-                                print(newTreatment.id!)
+                            }else if($0?.treatment == "DID NOT ATTEND"){
+                                var newTreatment = Treatment(Doctor: fetchedDoc, Date: globalData.stringToDate(stringDate: $0?.date ?? "") , Treatment: $0?.treatment ?? "", Provider: globalData.csvtoProvider(csvObject:$0?.provider ?? "No Provider"))
                                 
+                                newTreatment.id = $0!.id
+                                
+                                if ($0!.viewed == "true") {
+                                    newTreatment.viewed = true
+                                }else{
+                                    newTreatment.viewed = false
+                                }
+                                
+                                missedList.append(newTreatment)
                             }
                         }
                     
                     
                 }
-                print("provider length: ")
-                print(providerList.count)
                 
-                completion(treatmentList, doctorList, attorney, name, providerList)
+                completion(treatmentList, missedList, doctorList, attorney, name, providerList)
         }
     }
     
@@ -214,8 +244,7 @@ class server_handler{
                 completion("Nil", "Nil")
             }else{
                 result?.data?.listAttorneys?.items?.forEach{lawyer in
-                    print("Here is the attorney you asked for")
-                    print(lawyer?.username ?? "No lawyer")
+        
                     completion(lawyer?.username ?? "Nil", lawyer?.firm ?? "Nil")
                 }
             }
@@ -336,7 +365,6 @@ class server_handler{
                     print(error?.localizedDescription ?? "")
                     return
                 }
-            print(result?.data?.listTreatments?.items!.count ?? "No items")
             
                 result?.data?.listTreatments?.items!.forEach { //print(($0?.doctor)! + " " + ($0?.treatment)!)
                    
@@ -401,8 +429,7 @@ class server_handler{
                 completion("Nil")
             }else{
                 result?.data?.listFirms?.items?.forEach{firm in
-                    print("Here is the firm you asked for")
-                    print(firm?.username ?? "No firm")
+
                     completion(firm?.username ?? "Nil")
                 }
             }
@@ -540,6 +567,81 @@ class server_handler{
             }
             
         }
+    
+    func updateToViewed(ID: String){
+        
+        var idInput = GraphQLID()
+        idInput = (ID as GraphQLID)
+        
+        
+        var updateQuery =  UpdateTreatmentInput(id: idInput)
+        
+        updateQuery.viewed = "true"
+        
+        self.appSyncClient?.perform(mutation: UpdateTreatmentMutation(input: updateQuery)){(result,error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }else if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
+                return
+            }else {
+                print("Success Update Data")
+            }
+ 
+        }
+
+    }
+    
+    
+    func updateScheduledToTreatment(ID: String, treatment: String){
+           
+           var idInput = GraphQLID()
+           idInput = (ID as GraphQLID)
+           
+           
+           var updateQuery =  UpdateTreatmentInput(id: idInput)
+           
+        updateQuery.treatment = treatment
+           
+           self.appSyncClient?.perform(mutation: UpdateTreatmentMutation(input: updateQuery)){(result,error) in
+               if let error = error as? AWSAppSyncClientError {
+                   print("Error occurred: \(error.localizedDescription )")
+               }else if let resultError = result?.errors {
+                   print("Error saving the item on server: \(resultError)")
+                   return
+               }else {
+                   print("Success Update Data")
+               }
+    
+           }
+
+       }
+    
+    func updateToDidNotAttend(ID: String){
+           
+           var idInput = GraphQLID()
+           idInput = (ID as GraphQLID)
+           
+           
+           var updateQuery =  UpdateTreatmentInput(id: idInput)
+           
+        updateQuery.treatment = "DID NOT ATTEND"
+           
+           self.appSyncClient?.perform(mutation: UpdateTreatmentMutation(input: updateQuery)){(result,error) in
+               if let error = error as? AWSAppSyncClientError {
+                   print("Error occurred: \(error.localizedDescription )")
+               }else if let resultError = result?.errors {
+                   print("Error saving the item on server: \(resultError)")
+                   return
+               }else {
+                   print("Success Update Data")
+               }
+    
+           }
+
+       }
+    
+    
         
     func fetchFutureTreatmentHistory(userName: String, completion: @escaping ([String:[Treatment]]) -> Void) {
             
@@ -568,33 +670,23 @@ class server_handler{
                         print(error?.localizedDescription ?? "")
                         return
                     }
-                print(result?.data?.listTreatments?.items!.count ?? "No items")
                 
                 
                     result?.data?.listTreatments?.items!.forEach {
                         
                         let fetchedDoc = globalData.csvtoDoctor(DoctorCSV: $0?.doctor ?? "1,2", ProviderCSV: $0?.provider ?? "3,4,5")
                         
-                        
-                        
-                 
+
                         if($0 != nil){
                             
-                            print("Dynamo Date")
-                            print($0?.date ?? "")
                             let tempDate = globalData.stripTimeFromDateString(date: $0?.date ?? "")
                                 
                                 if var val = scheduledDict[/*$0?.date ?? "No date"*/tempDate]{
-                                    print(tempDate)
-                                    print("Appending")
+                                 
                                     val.append(Treatment(Doctor: fetchedDoc, Date: globalData.stringToDate(stringDate:$0?.date ?? ""), Treatment: $0?.treatment ?? "", Provider: globalData.csvtoProvider(csvObject:$0?.provider ?? "No Provider")))
                                     scheduledDict[tempDate] = val
-                                    print("Val length")
-                                    print(val.count)
-                                    print("date length")
-                                    print(scheduledDict[tempDate]?.count)
+
                                 }else{
-                                    print(tempDate)
 
                                     scheduledDict[/*$0?.date ?? "No date"*/tempDate] = [Treatment(Doctor: fetchedDoc, Date: globalData.stringToDate(stringDate: $0?.date ?? ""), Treatment: $0?.treatment ?? "", Provider: globalData.csvtoProvider(csvObject:$0?.provider ?? "No Provider"))]
                                 }
@@ -605,10 +697,107 @@ class server_handler{
                         }
                     }
                 
-                print(scheduledDict["7/9/20"]?.count)
                     completion(scheduledDict)
             }
         }
+    
+    
+    func getDocumentKeys(completion: @escaping ([Data], [Document]) -> Void) -> Void {
+        let selectQuery = ListDocumentsQuery()
+        var filter = ModelDocumentFilterInput()
+    
+        var clientNameInput = ModelStringInput()
+        
+        var documentList = [String]()
+        var group = DispatchGroup()
+        
+        clientNameInput.eq = globalData.user
+        
+        filter.username = clientNameInput
+        
+        selectQuery.filter = filter
+        
+        group.enter()
+        self.appSyncClient?.fetch(query: selectQuery, cachePolicy: .fetchIgnoringCacheData){(result, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            
+            result?.data?.listDocuments?.items?.forEach{doc in
+                
+                documentList.append(doc?.contractKey ?? "No key")
+                
+                
+            }
+            group.leave()
+
+        }
+        
+            group.notify(queue: .main){
+
+                
+                var documentData = [Data]()
+                
+                downloadDocFiles(Keys: documentList){data, docList in
+                    documentData = data
+                
+                    
+            
+
+                
+                    print("Document data")
+                    print(documentData.count)
+            
+                    completion(documentData, docList)
+                }
+            
+        }
+        
+        func downloadDocFiles(Keys: [String], completion: @escaping ([Data], [Document]) -> Void){
+            
+            var documentData = [Data]()
+            var documentList = [Document]()
+            
+            
+            for key in Keys {
+                group.enter()
+                _ = Amplify.Storage.downloadData(key: key,
+                    progressListener: { progress in
+                        print("Progress: \(progress)")
+                    }, resultListener: { (event) in
+                        switch event {
+                        case let .success(data):
+                            print("Completed: \(data)")
+                            
+                            /*
+                             Create a document object, with data and key. So, when the document is signed,
+                             it can be written to the S3 bucket with the same key, therefore overwriting the
+                             unsigned version
+                             */
+                            documentData.append(data)
+                            documentList.append(Document(data: data, key: key))
+
+                            group.leave()
+                        case let .failure(storageError):
+                            print("Failed: \(storageError.errorDescription). \(storageError.recoverySuggestion)")
+                    }
+                })
+            }
+            
+            
+            
+            
+            
+            group.notify(queue: .main){
+                completion(documentData, documentList)
+            }
+            
+        }
+        
+ 
+        
+    }
     
 }
     

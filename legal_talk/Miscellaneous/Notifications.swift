@@ -32,7 +32,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
         }
     }
     
-    func scheduleNotification(treatment: Treatment, notificationType: String){
+    func scheduleNotification(treatment: Treatment, notificationType: String, treatmentID : String){
 
         
         let content = UNMutableNotificationContent()
@@ -76,17 +76,23 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
                 //Value equal to one day in seconds. This will make the reminder go one day before the scheduled appointment
                 let dayBeforeInSeconds = -86400
                 
+                
+                //real one
                 let upcomingDate = treatment.Date.addingTimeInterval(TimeInterval(dayBeforeInSeconds))
                 let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: upcomingDate)
                  
                 
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
                 
-                /* use for testing, this is a 10 second interval
+                
+                
+                /*
+                // use for testing, this is a 10 second interval
                 let date = Date().addingTimeInterval(10)
                 let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
                  let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
                 */
-                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                
                 
                 //Random string as the identifier
                 let identifier = UUID().uuidString
@@ -112,10 +118,12 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
                 content.sound = UNNotificationSound.default
                 content.badge = 1
                 content.categoryIdentifier = "TREATMENT"
-                content.userInfo = ["Doctor": globalData.doctorToCSV(Doctor:treatment.Doctor), "Date": treatment.Date, "Provider": globalData.providerToCSV(provider: treatment.Provider)]
+                content.userInfo = ["Doctor": globalData.doctorToCSV(Doctor:treatment.Doctor), "Date": treatment.Date, "Provider": globalData.providerToCSV(provider: treatment.Provider), "ID": treatmentID]
                 
                 
-                //Four hours later in seconds will be added to the entered date when sheduling a treatment
+                //Four hours later in seconds will be added to the entered date when scheduling a treatment
+                
+                /*real one
                 let fourHoursLaterInSeconds = 14400
                 
                 let upcomingDate = treatment.Date.addingTimeInterval(TimeInterval(fourHoursLaterInSeconds))
@@ -124,6 +132,14 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
                 
                 let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: upcomingDate)
                 let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+                */
+                
+                
+                // use for testing, this is a 10 second interval
+                let date = Date().addingTimeInterval(10)
+                let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10.0, repeats: false)
+                
                 
                 
                 let identifier = UUID().uuidString
@@ -147,7 +163,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
     
     
   /*
-     Called when a notification response is entered. This will push a treatment to the server
+     Called when a notification response is entered. This will update the Future Treatment in the server
      */
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
       
@@ -159,15 +175,22 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
         let doctorID =  globalData.csvtoDoctor(DoctorCSV: userInfo["Doctor"] as! String, ProviderCSV: userInfo["Provider"] as! String)
         let dateID = userInfo["Date"] as! Date
         
-    
+        
     
         //If the response is an InputNotification, then it has to be a treatment input
         //Later on, there may be other input responses, so this may change, in that case
         //We can use a switch statement inside of this thing
         if let textResponse = response as? UNTextInputNotificationResponse {
             
-            //Push to server
+            //Push to server.
+            //See if we can update the scheduled treatment instead of adding a new one
+            /*
             server_action.insertTreatment(Username: globalData.user, Doctor: userInfo["Doctor"] as! String, Treatment: textResponse.userText, Date: globalData.dateToString(Date: userInfo["Date"] as! Date), Attorney: globalData.attorney, Name: globalData.name, Provider: userInfo["Provider"] as! String)
+            */
+            
+            server_action.updateScheduledToTreatment(ID: userInfo["ID"] as! String, treatment: textResponse.userText)
+            
+            
             //Insert to globalData
             globalData.Treatments.append(Treatment(Doctor:   globalData.csvtoDoctor(DoctorCSV: userInfo["Doctor"] as! String, ProviderCSV: userInfo["Provider"] as! String), Date:  userInfo["Date"] as! Date, Treatment:textResponse.userText, Provider:  globalData.csvtoProvider(csvObject:  userInfo["Provider"] as! String)))
         }
@@ -180,7 +203,15 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
          
             case "NO_ACTION":
                 print("no")
-                //Should I do anything if the client did not go to get treatment? Inform the attorney? IDK. That is later down the line.
+                //Should I do anything if the client did not go to get treatment? Inform the attorney? IDK. That is later down the line. Yes
+            
+//                server_action.insertTreatment(Username: globalData.user, Doctor: userInfo["Doctor"] as! String, Treatment: "DID NOT ATTEND", Date: globalData.dateToString(Date: userInfo["Date"] as! Date), Attorney: globalData.attorney, Name: globalData.name, Provider: userInfo["Provider"] as! String)
+            
+                server_action.updateToDidNotAttend(ID: userInfo["ID"] as! String)
+            
+                
+            
+            
             default:
                 print("no hits")
         }
@@ -192,6 +223,7 @@ class Notifications: NSObject, UNUserNotificationCenterDelegate{
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert, .sound, .badge]) //required to show notification when in foreground
     }
+    
     
     
 }

@@ -13,6 +13,9 @@ import IQKeyboardManager
 import PushKit
 import AWSPinpoint
 import UserNotifications
+import PDFKit
+import Amplify
+import AmplifyPlugins
 
 let globalData = DataModel() //Eventually, we will just use this for our data model instead of passing multiple models
 let notifications = Notifications()
@@ -33,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared().isEnabled = true
-       // IQKeyboardManager.shared().keyboardDistanceFromTextField = 100
+        IQKeyboardManager.shared().keyboardDistanceFromTextField = 100
         IQKeyboardManager.shared().isEnableAutoToolbar = false
         
         pushRegistry = PKPushRegistry(queue: nil)
@@ -41,22 +44,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
         pushRegistry.desiredPushTypes = [.fileProvider]
         
         
-//        // Instantiate Pinpoint
-//        let pinpointConfiguration = AWSPinpointConfiguration
-//            .defaultPinpointConfiguration(launchOptions: launchOptions)
-//        // Set debug mode to use APNS sandbox, make sure to toggle for your production app
-//        pinpointConfiguration.debug = true
-//        pinpoint = AWSPinpoint(configuration: pinpointConfiguration)
-//
-//        // Present the user with a request to authorize push notifications
-//        registerForPushNotifications()
-        
+   
         
         do{
             let cacheConfiguration = try AWSAppSyncCacheConfiguration()
             let appSyncServiceConfig = try AWSAppSyncServiceConfig()
             let appSyncConfig = try AWSAppSyncClientConfiguration(appSyncServiceConfig:appSyncServiceConfig,cacheConfiguration:cacheConfiguration)
             appSyncClient = try AWSAppSyncClient(appSyncConfig: appSyncConfig)
+
+            try Amplify.add(plugin: AWSS3StoragePlugin())
+            try Amplify.add(plugin: AWSCognitoAuthPlugin())
+            try Amplify.configure()
+
+
             print("Initialized appsync client")
         }catch {
             print("error initializing appsync client")
@@ -161,6 +161,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PKPushRegistryDelegate {
 //        )
 //    }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        print("Became active")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        print("Entered foreground")
+
+    }
+    
+
+    
 
 }
 

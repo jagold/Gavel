@@ -8,19 +8,19 @@
 
 import UIKit
 
-class ClientList: UITableViewController {
+class ClientList: UITableViewController,UISearchBarDelegate {
     
     //MARK: Properties
+    @IBOutlet weak var searchBar: UISearchBar!
     var server_action = server_handler()
     let group = DispatchGroup()
+    var filteredData = globalData.Clients
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        searchBar.delegate = self
+        self.navigationItem.title = "Client List"
     }
 
     // MARK: - Table view data source
@@ -32,7 +32,7 @@ class ClientList: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return globalData.Clients.count
+        return self.filteredData.count
     }
 
     
@@ -44,7 +44,7 @@ class ClientList: UITableViewController {
         }
         
         // Configure the cell...
-        let client = globalData.Clients[indexPath.row]
+        let client = self.filteredData[indexPath.row]
         
         cell.clientNameLabel.text = client.Name
         
@@ -109,26 +109,25 @@ class ClientList: UITableViewController {
             }
             
             
-            clientInfo.clientUsername = globalData.Clients[indexPath.row].Username
+            clientInfo.clientUsername = self.filteredData[indexPath.row].Username
             
-            
+            clientInfo.nameLabel = self.filteredData[indexPath.row].Username
             
             
             group.enter()
-            self.server_action.fetchTreatmentHistory(userName: globalData.Clients[indexPath.row].Username){treatments, doctors,attorney,name, providers  in
+            self.server_action.fetchTreatmentHistory(userName: self.filteredData[indexPath.row].Username){treatments, missedList, doctors,attorney, name, providers  in
                 print("index 1")
                 print(indexPath.row)
                 globalData.Treatments = treatments
                 globalData.Treatments.reverse()
                 globalData.Doctors = doctors
                 globalData.Providers = providers
-                
+                globalData.MissedTreatments = missedList
                 self.group.leave()
-                
             }
             
             group.enter()
-            self.server_action.fetch_limitations(User: globalData.Clients[indexPath.row].Username){limitations in
+            self.server_action.fetch_limitations(User: self.filteredData[indexPath.row].Username){limitations in
                 print("index 2")
                 print(indexPath.row)
                 globalData.limitations = limitations
@@ -136,9 +135,8 @@ class ClientList: UITableViewController {
             }
             
             self.group.notify(queue:.main){
-                clientInfo.nameLabel = globalData.Clients[indexPath.row].Name
-            
-            
+                clientInfo.nameLabel = self.filteredData[indexPath.row].Name
+
             }
             
         default:
@@ -146,5 +144,34 @@ class ClientList: UITableViewController {
         }
     }
     
+    //MARK: Search
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        
 
+        
+        self.filteredData = self.filteredData.filter{$0.Name.range(of: searchText, options: .caseInsensitive) != nil}
+        
+        if(searchText == ""){
+            self.filteredData = globalData.Clients
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+            self.searchBar.showsCancelButton = true
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+            searchBar.showsCancelButton = false
+            searchBar.text = ""
+            self.filteredData = globalData.Clients
+            self.tableView.reloadData()
+            searchBar.resignFirstResponder()
+    }
+    
+    
 }

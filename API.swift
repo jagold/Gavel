@@ -5,8 +5,8 @@ import AWSAppSync
 public struct CreateTreatmentInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil) {
-    graphQLMap = ["id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date]
+  public init(id: GraphQLID? = nil, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil) {
+    graphQLMap = ["id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed]
   }
 
   public var id: GraphQLID? {
@@ -80,13 +80,22 @@ public struct CreateTreatmentInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "date")
     }
   }
+
+  public var viewed: String? {
+    get {
+      return graphQLMap["viewed"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
+    }
+  }
 }
 
 public struct ModelTreatmentConditionInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(username: ModelStringInput? = nil, name: ModelStringInput? = nil, provider: ModelStringInput? = nil, doctor: ModelStringInput? = nil, attorney: ModelStringInput? = nil, treatment: ModelStringInput? = nil, date: ModelStringInput? = nil, and: [ModelTreatmentConditionInput?]? = nil, or: [ModelTreatmentConditionInput?]? = nil, not: ModelTreatmentConditionInput? = nil) {
-    graphQLMap = ["username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "and": and, "or": or, "not": not]
+  public init(username: ModelStringInput? = nil, name: ModelStringInput? = nil, provider: ModelStringInput? = nil, doctor: ModelStringInput? = nil, attorney: ModelStringInput? = nil, treatment: ModelStringInput? = nil, date: ModelStringInput? = nil, viewed: ModelStringInput? = nil, and: [ModelTreatmentConditionInput?]? = nil, or: [ModelTreatmentConditionInput?]? = nil, not: ModelTreatmentConditionInput? = nil) {
+    graphQLMap = ["username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "and": and, "or": or, "not": not]
   }
 
   public var username: ModelStringInput? {
@@ -149,6 +158,15 @@ public struct ModelTreatmentConditionInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "date")
+    }
+  }
+
+  public var viewed: ModelStringInput? {
+    get {
+      return graphQLMap["viewed"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
     }
   }
 
@@ -444,8 +462,8 @@ public struct ModelSizeInput: GraphQLMapConvertible {
 public struct UpdateTreatmentInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, username: String? = nil, name: String? = nil, provider: String? = nil, doctor: String? = nil, attorney: String? = nil, treatment: String? = nil, date: String? = nil) {
-    graphQLMap = ["id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date]
+  public init(id: GraphQLID, username: String? = nil, name: String? = nil, provider: String? = nil, doctor: String? = nil, attorney: String? = nil, treatment: String? = nil, date: String? = nil, viewed: String? = nil) {
+    graphQLMap = ["id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed]
   }
 
   public var id: GraphQLID {
@@ -517,6 +535,15 @@ public struct UpdateTreatmentInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "date")
+    }
+  }
+
+  public var viewed: String? {
+    get {
+      return graphQLMap["viewed"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
     }
   }
 }
@@ -1164,11 +1191,232 @@ public struct DeleteLimitationInput: GraphQLMapConvertible {
   }
 }
 
+public struct CreateDocumentInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID? = nil, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String) {
+    graphQLMap = ["id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm]
+  }
+
+  public var id: GraphQLID? {
+    get {
+      return graphQLMap["id"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var username: String {
+    get {
+      return graphQLMap["username"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "username")
+    }
+  }
+
+  public var contractKey: GraphQLID? {
+    get {
+      return graphQLMap["contractKey"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "contractKey")
+    }
+  }
+
+  public var documentName: String? {
+    get {
+      return graphQLMap["documentName"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "documentName")
+    }
+  }
+
+  public var viewed: String? {
+    get {
+      return graphQLMap["viewed"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
+    }
+  }
+
+  public var firm: String {
+    get {
+      return graphQLMap["firm"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "firm")
+    }
+  }
+}
+
+public struct ModelDocumentConditionInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(username: ModelStringInput? = nil, contractKey: ModelIDInput? = nil, documentName: ModelStringInput? = nil, viewed: ModelStringInput? = nil, firm: ModelStringInput? = nil, and: [ModelDocumentConditionInput?]? = nil, or: [ModelDocumentConditionInput?]? = nil, not: ModelDocumentConditionInput? = nil) {
+    graphQLMap = ["username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "and": and, "or": or, "not": not]
+  }
+
+  public var username: ModelStringInput? {
+    get {
+      return graphQLMap["username"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "username")
+    }
+  }
+
+  public var contractKey: ModelIDInput? {
+    get {
+      return graphQLMap["contractKey"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "contractKey")
+    }
+  }
+
+  public var documentName: ModelStringInput? {
+    get {
+      return graphQLMap["documentName"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "documentName")
+    }
+  }
+
+  public var viewed: ModelStringInput? {
+    get {
+      return graphQLMap["viewed"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
+    }
+  }
+
+  public var firm: ModelStringInput? {
+    get {
+      return graphQLMap["firm"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "firm")
+    }
+  }
+
+  public var and: [ModelDocumentConditionInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelDocumentConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelDocumentConditionInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelDocumentConditionInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var not: ModelDocumentConditionInput? {
+    get {
+      return graphQLMap["not"] as! ModelDocumentConditionInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+}
+
+public struct UpdateDocumentInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID, username: String? = nil, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String? = nil) {
+    graphQLMap = ["id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm]
+  }
+
+  public var id: GraphQLID {
+    get {
+      return graphQLMap["id"] as! GraphQLID
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var username: String? {
+    get {
+      return graphQLMap["username"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "username")
+    }
+  }
+
+  public var contractKey: GraphQLID? {
+    get {
+      return graphQLMap["contractKey"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "contractKey")
+    }
+  }
+
+  public var documentName: String? {
+    get {
+      return graphQLMap["documentName"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "documentName")
+    }
+  }
+
+  public var viewed: String? {
+    get {
+      return graphQLMap["viewed"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
+    }
+  }
+
+  public var firm: String? {
+    get {
+      return graphQLMap["firm"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "firm")
+    }
+  }
+}
+
+public struct DeleteDocumentInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: GraphQLID? = nil) {
+    graphQLMap = ["id": id]
+  }
+
+  public var id: GraphQLID? {
+    get {
+      return graphQLMap["id"] as! GraphQLID?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+}
+
 public struct ModelTreatmentFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDInput? = nil, username: ModelStringInput? = nil, name: ModelStringInput? = nil, provider: ModelStringInput? = nil, doctor: ModelStringInput? = nil, attorney: ModelStringInput? = nil, treatment: ModelStringInput? = nil, date: ModelStringInput? = nil, and: [ModelTreatmentFilterInput?]? = nil, or: [ModelTreatmentFilterInput?]? = nil, not: ModelTreatmentFilterInput? = nil) {
-    graphQLMap = ["id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "and": and, "or": or, "not": not]
+  public init(id: ModelIDInput? = nil, username: ModelStringInput? = nil, name: ModelStringInput? = nil, provider: ModelStringInput? = nil, doctor: ModelStringInput? = nil, attorney: ModelStringInput? = nil, treatment: ModelStringInput? = nil, date: ModelStringInput? = nil, viewed: ModelStringInput? = nil, and: [ModelTreatmentFilterInput?]? = nil, or: [ModelTreatmentFilterInput?]? = nil, not: ModelTreatmentFilterInput? = nil) {
+    graphQLMap = ["id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "and": and, "or": or, "not": not]
   }
 
   public var id: ModelIDInput? {
@@ -1240,6 +1488,15 @@ public struct ModelTreatmentFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "date")
+    }
+  }
+
+  public var viewed: ModelStringInput? {
+    get {
+      return graphQLMap["viewed"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
     }
   }
 
@@ -1484,9 +1741,98 @@ public struct ModelLimitationFilterInput: GraphQLMapConvertible {
   }
 }
 
+public struct ModelDocumentFilterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(id: ModelIDInput? = nil, username: ModelStringInput? = nil, contractKey: ModelIDInput? = nil, documentName: ModelStringInput? = nil, viewed: ModelStringInput? = nil, firm: ModelStringInput? = nil, and: [ModelDocumentFilterInput?]? = nil, or: [ModelDocumentFilterInput?]? = nil, not: ModelDocumentFilterInput? = nil) {
+    graphQLMap = ["id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "and": and, "or": or, "not": not]
+  }
+
+  public var id: ModelIDInput? {
+    get {
+      return graphQLMap["id"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var username: ModelStringInput? {
+    get {
+      return graphQLMap["username"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "username")
+    }
+  }
+
+  public var contractKey: ModelIDInput? {
+    get {
+      return graphQLMap["contractKey"] as! ModelIDInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "contractKey")
+    }
+  }
+
+  public var documentName: ModelStringInput? {
+    get {
+      return graphQLMap["documentName"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "documentName")
+    }
+  }
+
+  public var viewed: ModelStringInput? {
+    get {
+      return graphQLMap["viewed"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "viewed")
+    }
+  }
+
+  public var firm: ModelStringInput? {
+    get {
+      return graphQLMap["firm"] as! ModelStringInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "firm")
+    }
+  }
+
+  public var and: [ModelDocumentFilterInput?]? {
+    get {
+      return graphQLMap["and"] as! [ModelDocumentFilterInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "and")
+    }
+  }
+
+  public var or: [ModelDocumentFilterInput?]? {
+    get {
+      return graphQLMap["or"] as! [ModelDocumentFilterInput?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "or")
+    }
+  }
+
+  public var not: ModelDocumentFilterInput? {
+    get {
+      return graphQLMap["not"] as! ModelDocumentFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "not")
+    }
+  }
+}
+
 public final class CreateTreatmentMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateTreatment($input: CreateTreatmentInput!, $condition: ModelTreatmentConditionInput) {\n  createTreatment(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation CreateTreatment($input: CreateTreatmentInput!, $condition: ModelTreatmentConditionInput) {\n  createTreatment(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: CreateTreatmentInput
   public var condition: ModelTreatmentConditionInput?
@@ -1539,6 +1885,7 @@ public final class CreateTreatmentMutation: GraphQLMutation {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1549,8 +1896,8 @@ public final class CreateTreatmentMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1634,6 +1981,15 @@ public final class CreateTreatmentMutation: GraphQLMutation {
         }
       }
 
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1657,7 +2013,7 @@ public final class CreateTreatmentMutation: GraphQLMutation {
 
 public final class UpdateTreatmentMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateTreatment($input: UpdateTreatmentInput!, $condition: ModelTreatmentConditionInput) {\n  updateTreatment(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation UpdateTreatment($input: UpdateTreatmentInput!, $condition: ModelTreatmentConditionInput) {\n  updateTreatment(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: UpdateTreatmentInput
   public var condition: ModelTreatmentConditionInput?
@@ -1710,6 +2066,7 @@ public final class UpdateTreatmentMutation: GraphQLMutation {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1720,8 +2077,8 @@ public final class UpdateTreatmentMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1805,6 +2162,15 @@ public final class UpdateTreatmentMutation: GraphQLMutation {
         }
       }
 
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -1828,7 +2194,7 @@ public final class UpdateTreatmentMutation: GraphQLMutation {
 
 public final class DeleteTreatmentMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteTreatment($input: DeleteTreatmentInput!, $condition: ModelTreatmentConditionInput) {\n  deleteTreatment(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "mutation DeleteTreatment($input: DeleteTreatmentInput!, $condition: ModelTreatmentConditionInput) {\n  deleteTreatment(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public var input: DeleteTreatmentInput
   public var condition: ModelTreatmentConditionInput?
@@ -1881,6 +2247,7 @@ public final class DeleteTreatmentMutation: GraphQLMutation {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -1891,8 +2258,8 @@ public final class DeleteTreatmentMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -1973,6 +2340,15 @@ public final class DeleteTreatmentMutation: GraphQLMutation {
         }
         set {
           snapshot.updateValue(newValue, forKey: "date")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
         }
       }
 
@@ -3176,9 +3552,462 @@ public final class DeleteLimitationMutation: GraphQLMutation {
   }
 }
 
+public final class CreateDocumentMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation CreateDocument($input: CreateDocumentInput!, $condition: ModelDocumentConditionInput) {\n  createDocument(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var input: CreateDocumentInput
+  public var condition: ModelDocumentConditionInput?
+
+  public init(input: CreateDocumentInput, condition: ModelDocumentConditionInput? = nil) {
+    self.input = input
+    self.condition = condition
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input, "condition": condition]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("createDocument", arguments: ["input": GraphQLVariable("input"), "condition": GraphQLVariable("condition")], type: .object(CreateDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(createDocument: CreateDocument? = nil) {
+      self.init(snapshot: ["__typename": "Mutation", "createDocument": createDocument.flatMap { $0.snapshot }])
+    }
+
+    public var createDocument: CreateDocument? {
+      get {
+        return (snapshot["createDocument"] as? Snapshot).flatMap { CreateDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "createDocument")
+      }
+    }
+
+    public struct CreateDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class UpdateDocumentMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation UpdateDocument($input: UpdateDocumentInput!, $condition: ModelDocumentConditionInput) {\n  updateDocument(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var input: UpdateDocumentInput
+  public var condition: ModelDocumentConditionInput?
+
+  public init(input: UpdateDocumentInput, condition: ModelDocumentConditionInput? = nil) {
+    self.input = input
+    self.condition = condition
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input, "condition": condition]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("updateDocument", arguments: ["input": GraphQLVariable("input"), "condition": GraphQLVariable("condition")], type: .object(UpdateDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(updateDocument: UpdateDocument? = nil) {
+      self.init(snapshot: ["__typename": "Mutation", "updateDocument": updateDocument.flatMap { $0.snapshot }])
+    }
+
+    public var updateDocument: UpdateDocument? {
+      get {
+        return (snapshot["updateDocument"] as? Snapshot).flatMap { UpdateDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "updateDocument")
+      }
+    }
+
+    public struct UpdateDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class DeleteDocumentMutation: GraphQLMutation {
+  public static let operationString =
+    "mutation DeleteDocument($input: DeleteDocumentInput!, $condition: ModelDocumentConditionInput) {\n  deleteDocument(input: $input, condition: $condition) {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var input: DeleteDocumentInput
+  public var condition: ModelDocumentConditionInput?
+
+  public init(input: DeleteDocumentInput, condition: ModelDocumentConditionInput? = nil) {
+    self.input = input
+    self.condition = condition
+  }
+
+  public var variables: GraphQLMap? {
+    return ["input": input, "condition": condition]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Mutation"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("deleteDocument", arguments: ["input": GraphQLVariable("input"), "condition": GraphQLVariable("condition")], type: .object(DeleteDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(deleteDocument: DeleteDocument? = nil) {
+      self.init(snapshot: ["__typename": "Mutation", "deleteDocument": deleteDocument.flatMap { $0.snapshot }])
+    }
+
+    public var deleteDocument: DeleteDocument? {
+      get {
+        return (snapshot["deleteDocument"] as? Snapshot).flatMap { DeleteDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "deleteDocument")
+      }
+    }
+
+    public struct DeleteDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
 public final class GetTreatmentQuery: GraphQLQuery {
   public static let operationString =
-    "query GetTreatment($id: ID!) {\n  getTreatment(id: $id) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "query GetTreatment($id: ID!) {\n  getTreatment(id: $id) {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public var id: GraphQLID
 
@@ -3229,6 +4058,7 @@ public final class GetTreatmentQuery: GraphQLQuery {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -3239,8 +4069,8 @@ public final class GetTreatmentQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -3324,6 +4154,15 @@ public final class GetTreatmentQuery: GraphQLQuery {
         }
       }
 
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -3347,7 +4186,7 @@ public final class GetTreatmentQuery: GraphQLQuery {
 
 public final class ListTreatmentsQuery: GraphQLQuery {
   public static let operationString =
-    "query ListTreatments($filter: ModelTreatmentFilterInput, $limit: Int, $nextToken: String) {\n  listTreatments(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      username\n      name\n      provider\n      doctor\n      attorney\n      treatment\n      date\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
+    "query ListTreatments($filter: ModelTreatmentFilterInput, $limit: Int, $nextToken: String) {\n  listTreatments(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      username\n      name\n      provider\n      doctor\n      attorney\n      treatment\n      date\n      viewed\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
 
   public var filter: ModelTreatmentFilterInput?
   public var limit: Int?
@@ -3448,6 +4287,7 @@ public final class ListTreatmentsQuery: GraphQLQuery {
           GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
           GraphQLField("treatment", type: .scalar(String.self)),
           GraphQLField("date", type: .scalar(String.self)),
+          GraphQLField("viewed", type: .scalar(String.self)),
           GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
           GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
         ]
@@ -3458,8 +4298,8 @@ public final class ListTreatmentsQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-          self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+        public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
         }
 
         public var __typename: String {
@@ -3540,6 +4380,15 @@ public final class ListTreatmentsQuery: GraphQLQuery {
           }
           set {
             snapshot.updateValue(newValue, forKey: "date")
+          }
+        }
+
+        public var viewed: String? {
+          get {
+            return snapshot["viewed"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "viewed")
           }
         }
 
@@ -4492,9 +5341,358 @@ public final class ListLimitationsQuery: GraphQLQuery {
   }
 }
 
+public final class GetDocumentQuery: GraphQLQuery {
+  public static let operationString =
+    "query GetDocument($id: ID!) {\n  getDocument(id: $id) {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public var id: GraphQLID
+
+  public init(id: GraphQLID) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("getDocument", arguments: ["id": GraphQLVariable("id")], type: .object(GetDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(getDocument: GetDocument? = nil) {
+      self.init(snapshot: ["__typename": "Query", "getDocument": getDocument.flatMap { $0.snapshot }])
+    }
+
+    public var getDocument: GetDocument? {
+      get {
+        return (snapshot["getDocument"] as? Snapshot).flatMap { GetDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "getDocument")
+      }
+    }
+
+    public struct GetDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class ListDocumentsQuery: GraphQLQuery {
+  public static let operationString =
+    "query ListDocuments($filter: ModelDocumentFilterInput, $limit: Int, $nextToken: String) {\n  listDocuments(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      username\n      contractKey\n      documentName\n      viewed\n      firm\n      createdAt\n      updatedAt\n    }\n    nextToken\n  }\n}"
+
+  public var filter: ModelDocumentFilterInput?
+  public var limit: Int?
+  public var nextToken: String?
+
+  public init(filter: ModelDocumentFilterInput? = nil, limit: Int? = nil, nextToken: String? = nil) {
+    self.filter = filter
+    self.limit = limit
+    self.nextToken = nextToken
+  }
+
+  public var variables: GraphQLMap? {
+    return ["filter": filter, "limit": limit, "nextToken": nextToken]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Query"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("listDocuments", arguments: ["filter": GraphQLVariable("filter"), "limit": GraphQLVariable("limit"), "nextToken": GraphQLVariable("nextToken")], type: .object(ListDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(listDocuments: ListDocument? = nil) {
+      self.init(snapshot: ["__typename": "Query", "listDocuments": listDocuments.flatMap { $0.snapshot }])
+    }
+
+    public var listDocuments: ListDocument? {
+      get {
+        return (snapshot["listDocuments"] as? Snapshot).flatMap { ListDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "listDocuments")
+      }
+    }
+
+    public struct ListDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["ModelDocumentConnection"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("items", type: .list(.object(Item.selections))),
+        GraphQLField("nextToken", type: .scalar(String.self)),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(items: [Item?]? = nil, nextToken: String? = nil) {
+        self.init(snapshot: ["__typename": "ModelDocumentConnection", "items": items.flatMap { $0.map { $0.flatMap { $0.snapshot } } }, "nextToken": nextToken])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var items: [Item?]? {
+        get {
+          return (snapshot["items"] as? [Snapshot?]).flatMap { $0.map { $0.flatMap { Item(snapshot: $0) } } }
+        }
+        set {
+          snapshot.updateValue(newValue.flatMap { $0.map { $0.flatMap { $0.snapshot } } }, forKey: "items")
+        }
+      }
+
+      public var nextToken: String? {
+        get {
+          return snapshot["nextToken"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "nextToken")
+        }
+      }
+
+      public struct Item: GraphQLSelectionSet {
+        public static let possibleTypes = ["Document"]
+
+        public static let selections: [GraphQLSelection] = [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("username", type: .nonNull(.scalar(String.self))),
+          GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+          GraphQLField("documentName", type: .scalar(String.self)),
+          GraphQLField("viewed", type: .scalar(String.self)),
+          GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+          GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+          GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+        ]
+
+        public var snapshot: Snapshot
+
+        public init(snapshot: Snapshot) {
+          self.snapshot = snapshot
+        }
+
+        public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+          self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+        }
+
+        public var __typename: String {
+          get {
+            return snapshot["__typename"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        public var id: GraphQLID {
+          get {
+            return snapshot["id"]! as! GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "id")
+          }
+        }
+
+        public var username: String {
+          get {
+            return snapshot["username"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "username")
+          }
+        }
+
+        public var contractKey: GraphQLID? {
+          get {
+            return snapshot["contractKey"] as? GraphQLID
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "contractKey")
+          }
+        }
+
+        public var documentName: String? {
+          get {
+            return snapshot["documentName"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "documentName")
+          }
+        }
+
+        public var viewed: String? {
+          get {
+            return snapshot["viewed"] as? String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "viewed")
+          }
+        }
+
+        public var firm: String {
+          get {
+            return snapshot["firm"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "firm")
+          }
+        }
+
+        public var createdAt: String {
+          get {
+            return snapshot["createdAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "createdAt")
+          }
+        }
+
+        public var updatedAt: String {
+          get {
+            return snapshot["updatedAt"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "updatedAt")
+          }
+        }
+      }
+    }
+  }
+}
+
 public final class OnCreateTreatmentSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateTreatment {\n  onCreateTreatment {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnCreateTreatment {\n  onCreateTreatment {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -4538,6 +5736,7 @@ public final class OnCreateTreatmentSubscription: GraphQLSubscription {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -4548,8 +5747,8 @@ public final class OnCreateTreatmentSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -4633,6 +5832,15 @@ public final class OnCreateTreatmentSubscription: GraphQLSubscription {
         }
       }
 
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -4656,7 +5864,7 @@ public final class OnCreateTreatmentSubscription: GraphQLSubscription {
 
 public final class OnUpdateTreatmentSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateTreatment {\n  onUpdateTreatment {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnUpdateTreatment {\n  onUpdateTreatment {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -4700,6 +5908,7 @@ public final class OnUpdateTreatmentSubscription: GraphQLSubscription {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -4710,8 +5919,8 @@ public final class OnUpdateTreatmentSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -4795,6 +6004,15 @@ public final class OnUpdateTreatmentSubscription: GraphQLSubscription {
         }
       }
 
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
       public var createdAt: String {
         get {
           return snapshot["createdAt"]! as! String
@@ -4818,7 +6036,7 @@ public final class OnUpdateTreatmentSubscription: GraphQLSubscription {
 
 public final class OnDeleteTreatmentSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteTreatment {\n  onDeleteTreatment {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    createdAt\n    updatedAt\n  }\n}"
+    "subscription OnDeleteTreatment {\n  onDeleteTreatment {\n    __typename\n    id\n    username\n    name\n    provider\n    doctor\n    attorney\n    treatment\n    date\n    viewed\n    createdAt\n    updatedAt\n  }\n}"
 
   public init() {
   }
@@ -4862,6 +6080,7 @@ public final class OnDeleteTreatmentSubscription: GraphQLSubscription {
         GraphQLField("attorney", type: .nonNull(.scalar(String.self))),
         GraphQLField("treatment", type: .scalar(String.self)),
         GraphQLField("date", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
         GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
         GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
       ]
@@ -4872,8 +6091,8 @@ public final class OnDeleteTreatmentSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, createdAt: String, updatedAt: String) {
-        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "createdAt": createdAt, "updatedAt": updatedAt])
+      public init(id: GraphQLID, username: String, name: String? = nil, provider: String, doctor: String, attorney: String, treatment: String? = nil, date: String? = nil, viewed: String? = nil, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Treatment", "id": id, "username": username, "name": name, "provider": provider, "doctor": doctor, "attorney": attorney, "treatment": treatment, "date": date, "viewed": viewed, "createdAt": createdAt, "updatedAt": updatedAt])
       }
 
       public var __typename: String {
@@ -4954,6 +6173,15 @@ public final class OnDeleteTreatmentSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "date")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
         }
       }
 
@@ -6052,6 +7280,432 @@ public final class OnDeleteLimitationSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "description")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class OnCreateDocumentSubscription: GraphQLSubscription {
+  public static let operationString =
+    "subscription OnCreateDocument {\n  onCreateDocument {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Subscription"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("onCreateDocument", type: .object(OnCreateDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(onCreateDocument: OnCreateDocument? = nil) {
+      self.init(snapshot: ["__typename": "Subscription", "onCreateDocument": onCreateDocument.flatMap { $0.snapshot }])
+    }
+
+    public var onCreateDocument: OnCreateDocument? {
+      get {
+        return (snapshot["onCreateDocument"] as? Snapshot).flatMap { OnCreateDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "onCreateDocument")
+      }
+    }
+
+    public struct OnCreateDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class OnUpdateDocumentSubscription: GraphQLSubscription {
+  public static let operationString =
+    "subscription OnUpdateDocument {\n  onUpdateDocument {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Subscription"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("onUpdateDocument", type: .object(OnUpdateDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(onUpdateDocument: OnUpdateDocument? = nil) {
+      self.init(snapshot: ["__typename": "Subscription", "onUpdateDocument": onUpdateDocument.flatMap { $0.snapshot }])
+    }
+
+    public var onUpdateDocument: OnUpdateDocument? {
+      get {
+        return (snapshot["onUpdateDocument"] as? Snapshot).flatMap { OnUpdateDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "onUpdateDocument")
+      }
+    }
+
+    public struct OnUpdateDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
+        }
+      }
+
+      public var createdAt: String {
+        get {
+          return snapshot["createdAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "createdAt")
+        }
+      }
+
+      public var updatedAt: String {
+        get {
+          return snapshot["updatedAt"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "updatedAt")
+        }
+      }
+    }
+  }
+}
+
+public final class OnDeleteDocumentSubscription: GraphQLSubscription {
+  public static let operationString =
+    "subscription OnDeleteDocument {\n  onDeleteDocument {\n    __typename\n    id\n    username\n    contractKey\n    documentName\n    viewed\n    firm\n    createdAt\n    updatedAt\n  }\n}"
+
+  public init() {
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes = ["Subscription"]
+
+    public static let selections: [GraphQLSelection] = [
+      GraphQLField("onDeleteDocument", type: .object(OnDeleteDocument.selections)),
+    ]
+
+    public var snapshot: Snapshot
+
+    public init(snapshot: Snapshot) {
+      self.snapshot = snapshot
+    }
+
+    public init(onDeleteDocument: OnDeleteDocument? = nil) {
+      self.init(snapshot: ["__typename": "Subscription", "onDeleteDocument": onDeleteDocument.flatMap { $0.snapshot }])
+    }
+
+    public var onDeleteDocument: OnDeleteDocument? {
+      get {
+        return (snapshot["onDeleteDocument"] as? Snapshot).flatMap { OnDeleteDocument(snapshot: $0) }
+      }
+      set {
+        snapshot.updateValue(newValue?.snapshot, forKey: "onDeleteDocument")
+      }
+    }
+
+    public struct OnDeleteDocument: GraphQLSelectionSet {
+      public static let possibleTypes = ["Document"]
+
+      public static let selections: [GraphQLSelection] = [
+        GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+        GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("username", type: .nonNull(.scalar(String.self))),
+        GraphQLField("contractKey", type: .scalar(GraphQLID.self)),
+        GraphQLField("documentName", type: .scalar(String.self)),
+        GraphQLField("viewed", type: .scalar(String.self)),
+        GraphQLField("firm", type: .nonNull(.scalar(String.self))),
+        GraphQLField("createdAt", type: .nonNull(.scalar(String.self))),
+        GraphQLField("updatedAt", type: .nonNull(.scalar(String.self))),
+      ]
+
+      public var snapshot: Snapshot
+
+      public init(snapshot: Snapshot) {
+        self.snapshot = snapshot
+      }
+
+      public init(id: GraphQLID, username: String, contractKey: GraphQLID? = nil, documentName: String? = nil, viewed: String? = nil, firm: String, createdAt: String, updatedAt: String) {
+        self.init(snapshot: ["__typename": "Document", "id": id, "username": username, "contractKey": contractKey, "documentName": documentName, "viewed": viewed, "firm": firm, "createdAt": createdAt, "updatedAt": updatedAt])
+      }
+
+      public var __typename: String {
+        get {
+          return snapshot["__typename"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      public var id: GraphQLID {
+        get {
+          return snapshot["id"]! as! GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "id")
+        }
+      }
+
+      public var username: String {
+        get {
+          return snapshot["username"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "username")
+        }
+      }
+
+      public var contractKey: GraphQLID? {
+        get {
+          return snapshot["contractKey"] as? GraphQLID
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "contractKey")
+        }
+      }
+
+      public var documentName: String? {
+        get {
+          return snapshot["documentName"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "documentName")
+        }
+      }
+
+      public var viewed: String? {
+        get {
+          return snapshot["viewed"] as? String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "viewed")
+        }
+      }
+
+      public var firm: String {
+        get {
+          return snapshot["firm"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "firm")
         }
       }
 

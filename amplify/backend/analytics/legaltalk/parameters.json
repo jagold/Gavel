@@ -1,0 +1,21 @@
+{
+    "appName": "legaltalk",
+    "roleName": "pinpointLambdaRole77bebf26",
+    "cloudformationPolicyName": "cloudformationPolicy77bebf26",
+    "cloudWatchPolicyName": "cloudWatchPolicy77bebf26",
+    "pinpointPolicyName": "pinpointPolicy77bebf26",
+    "authPolicyName": "pinpoint_amplify_77bebf26",
+    "unauthPolicyName": "pinpoint_amplify_77bebf26",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

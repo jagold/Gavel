@@ -15,6 +15,8 @@ class AnimationController: UIViewController {
     //The view
     @IBOutlet weak var animationView: AnimationView!
     
+    let group = DispatchGroup()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
@@ -24,9 +26,21 @@ class AnimationController: UIViewController {
         //Set the view animation to the checkmark
         animationView.animation = check
         
+        
         //Play it immediately and unwind to main menu when done
         animationView.play(){finished in
-            self.performSegue(withIdentifier: "unwindToMedMenu", sender: nil)
+            
+            self.group.enter()
+            UIViewPropertyAnimator(duration: 2, curve: .easeOut, animations:  {
+                self.animationView.alpha = 0.0
+                self.view.alpha = 0.0
+                
+                self.group.leave()
+                }).startAnimation()
+
+            self.group.notify(queue: .main){
+                self.performSegue(withIdentifier: "unwindToMedMenu", sender: nil)
+            }
         }
         
     }
@@ -44,6 +58,15 @@ class AnimationController: UIViewController {
                 guard let medMenu = segue.destination as? ClientMedMenu else{
                     fatalError("Unexpected destination")
                 }
+            
+//            UIView.animate(withDuration: 5){
+//                self.animationView.alpha = 0
+//            }
+            
+                UIViewPropertyAnimator(duration: 5, curve: .easeOut, animations:  {
+                    self.animationView.alpha = 0.0
+                    self.view.alpha = 0.0
+                    }).startAnimation()
 
                 
             default:

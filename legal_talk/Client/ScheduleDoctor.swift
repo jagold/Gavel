@@ -109,14 +109,20 @@ class ScheduleDoctor: UIViewController,UIPickerViewDelegate, UIPickerViewDataSou
         
         
         
-        server_action.insertTreatment(Username: globalData.user, Doctor: globalData.doctorToCSV(Doctor: scheduledTreatment.Doctor), Treatment: scheduledTreatment.Treatment, Date: globalData.dateToString(Date:scheduledTreatment.Date), Attorney: globalData.firm, Name: globalData.name, Provider: globalData.providerToCSV(provider:scheduledTreatment.Provider))
+        server_action.insertTreatment(Username: globalData.user, Doctor: globalData.doctorToCSV(Doctor: scheduledTreatment.Doctor), Treatment: scheduledTreatment.Treatment, Date: globalData.dateToString(Date:scheduledTreatment.Date), Attorney: globalData.firm, Name: globalData.name, Provider: globalData.providerToCSV(provider:scheduledTreatment.Provider)){id in
+            
+            print(id)
+            //Schedule the treatment. Write to server and all that ~jazz~
+            notifications.scheduleNotification(treatment: self.scheduledTreatment, notificationType: "upcomingTreatment", treatmentID: id) //Reminder for upcoming treatment
+            
+            notifications.scheduleNotification(treatment: self.scheduledTreatment, notificationType: "pastTreatment", treatmentID: id) //After the treatment occurs, this notification will ask whether the user went to the doctor
+        
+        }
         
         globalData.addFutureTreatment(date: scheduledTreatment.Date, treatment: scheduledTreatment)
         
         
-        //Schedule the treatment. Write to server and all that ~jazz~
-        notifications.scheduleNotification(treatment: self.scheduledTreatment, notificationType: "upcomingTreatment") //Reminder for upcoming treatment
-        notifications.scheduleNotification(treatment: self.scheduledTreatment, notificationType: "pastTreatment") //After the treatment occurs, this notification will ask whether the user went to the doctor
+
         
     }
     

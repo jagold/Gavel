@@ -67,6 +67,9 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         return globalData.futureTreatments[globalData.stripTimeFromDateString(date: globalData.dateToString(Date: date))]?.count ?? 0
+        
+        
+
     }
 
 }

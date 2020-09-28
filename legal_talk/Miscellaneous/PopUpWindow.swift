@@ -16,7 +16,6 @@ import UIKit
 class PopUpWindow: UIViewController {
 
     private let popUpWindowView = PopUpWindowView()
-    
     init(title: String, text: String, buttontext: String) {
         super.init(nibName: nil, bundle: nil)
         modalTransitionStyle = .crossDissolve
@@ -27,6 +26,7 @@ class PopUpWindow: UIViewController {
         popUpWindowView.popupButton.setTitle(buttontext, for: .normal)
         popUpWindowView.popupButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         view = popUpWindowView
+        
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -35,6 +35,8 @@ class PopUpWindow: UIViewController {
     
     
     @objc func dismissView(){
+        
+                
         self.dismiss(animated: true, completion: nil)
     }
 
@@ -53,14 +55,16 @@ private class PopUpWindowView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         // Semi-transparent background
+        print("dim")
         backgroundColor = UIColor.black.withAlphaComponent(0.3)
-        
+        print("popupView")
         // Popup Background
         popupView.backgroundColor = UIColor.white
         popupView.layer.borderWidth = BorderWidth
         popupView.layer.masksToBounds = true
         popupView.layer.borderColor = UIColor.white.cgColor
         popupView.layer.cornerRadius = 11
+        
         // Popup Title
         popupTitle.textColor = UIColor.black
         popupTitle.backgroundColor = UIColor.white
@@ -126,6 +130,8 @@ private class PopUpWindowView: UIView {
             popupButton.trailingAnchor.constraint(equalTo: popupView.trailingAnchor, constant: -BorderWidth),
             popupButton.bottomAnchor.constraint(equalTo: popupView.bottomAnchor, constant: -BorderWidth)
             ])
+        
+        print("done with pop up")
         
     }
     

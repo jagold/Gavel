@@ -28,7 +28,7 @@ class NewProvider: UIViewController, UITextFieldDelegate {
         if(globalData.Treatments.count == 0){
             navigationItem.hidesBackButton = true
         }else{
-            navigationItem.hidesBackButton = true
+            navigationItem.hidesBackButton = false
         }
 
         // Do any additional setup after loading the view.
@@ -52,7 +52,14 @@ class NewProvider: UIViewController, UITextFieldDelegate {
                 fatalError("Unexpected destination")
             }
 
-            newDoctor.provider = Provider(Name: self.nameField.text ?? "No name", Address: self.addressField.text ?? "No Address", Phone: self.phoneField.text ?? "No Phone")
+            let newProvider = Provider(Name: self.nameField.text ?? "No name", Address: self.addressField.text ?? "No Address", Phone: self.phoneField.text ?? "No Phone")
+            
+            
+            newDoctor.provider = newProvider
+            
+            globalData.Providers.append(newProvider)
+            
+            
           
             newDoctor.isSchedule = self.isSchedule
         

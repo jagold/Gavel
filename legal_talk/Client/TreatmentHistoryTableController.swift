@@ -12,9 +12,12 @@ class TreatmentHistoryTableController: UITableViewController {
 
     //MARK: Properties
     var server_action = server_handler()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+      
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,6 +35,8 @@ class TreatmentHistoryTableController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return globalData.Treatments.count
+       
+
     }
 
     
@@ -62,7 +67,9 @@ class TreatmentHistoryTableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
                 var popUpWindow: PopUpWindow!
+        
         popUpWindow = PopUpWindow(title: "Treatment Detail", text: globalData.Treatments[indexPath.row].Treatment + " with " + globalData.Treatments[indexPath.row].Doctor.Name + " on " + globalData.dateToString(Date:globalData.Treatments[indexPath.row].Date), buttontext: "Dismiss")
+        
         self.present(popUpWindow, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
     }

@@ -9,7 +9,11 @@ target 'legal_talk' do
     pod 'AWSMobileClient', '~> 2.13.0'      # Required dependency
   pod 'AWSAuthUI', '~> 2.13.0'            # Optional dependency required to use drop-in UI
   pod 'AWSUserPoolsSignIn', '~> 2.13.0'   # Optional dependency required to use drop-in UI
-  
+ 
+
+  pod 'Amplify'  
+  pod 'AmplifyPlugins/AWSS3StoragePlugin' 
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
   pod 'lottie-ios'
   pod 'IQKeyboardManager'
   pod 'AWSPinpoint'

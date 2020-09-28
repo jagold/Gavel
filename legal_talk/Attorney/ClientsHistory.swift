@@ -13,15 +13,25 @@ class ClientsHistory: UITableViewController {
     var currentClient = String()
     var server_action = server_handler()
     var halfModalTransitioningDelegate: HalfModalTransitioningDelegate?
-
+    @IBOutlet weak var missedTreatmentLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
+        if(globalData.MissedTreatments.count == 1){
+            missedTreatmentLabel.text = String(globalData.MissedTreatments.count) + " Missed Treatment"
+        }else{
+            missedTreatmentLabel.text = String(globalData.MissedTreatments.count) + " Missed Treatments"
+        }
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
+        self.navigationItem.title = currentClient + "'s Treatments"
     }
 
     // MARK: - Table view data source
@@ -58,9 +68,13 @@ class ClientsHistory: UITableViewController {
             
             cell.treatmentDate.text
                 = dateFormatter.string(from: treatment.Date)
+            
+            if(treatment.viewed == false){
+                cell.backgroundColor = UIColor.green
+            }
         }
-        // Configure the cell...
         
+        // Configure the cell...
 
         return cell
     }
@@ -133,19 +147,21 @@ class ClientsHistory: UITableViewController {
             treatmentDetail.treatmentIndex = indexPath.row
             
             
+            if(globalData.Treatments[indexPath.row].viewed == false){
+                server_action.updateToViewed(ID: globalData.Treatments[indexPath.row].id ?? "No ID")
+                print("Change to viewed")
+                globalData.Treatments[indexPath.row].viewed = true
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
+            
+            tableView.reloadData()
+            
             self.halfModalTransitioningDelegate =  HalfModalTransitioningDelegate(viewController: self, presentingViewController: treatmentDetailNav)
             
             treatmentDetailNav.modalPresentationStyle = .custom
             treatmentDetailNav.transitioningDelegate = self.halfModalTransitioningDelegate
             
-            
-            
-            
-            
 
-            
-            
-            
             
         default:
             fatalError("NO hits on segue")
@@ -153,4 +169,5 @@ class ClientsHistory: UITableViewController {
     }
     
 
+    
 }

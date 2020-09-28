@@ -1,0 +1,148 @@
+# this is an auto generated file. This will be overwritten
+query GetTreatment($id: ID!) {
+  getTreatment(id: $id) {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+query ListTreatments(
+  $filter: ModelTreatmentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTreatments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      name
+      provider
+      doctor
+      attorney
+      treatment
+      date
+      viewed
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetAttorney($id: ID!) {
+  getAttorney(id: $id) {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+query ListAttorneys(
+  $filter: ModelAttorneyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAttorneys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      name
+      firm
+      current_code
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetFirm($id: ID!) {
+  getFirm(id: $id) {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+query ListFirms(
+  $filter: ModelFirmFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFirms(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      firm
+      current_code
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetLimitation($id: ID!) {
+  getLimitation(id: $id) {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+query ListLimitations(
+  $filter: ModelLimitationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listLimitations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      description
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetDocument($id: ID!) {
+  getDocument(id: $id) {
+    id
+    username
+    contractKey
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}
+query ListDocuments(
+  $filter: ModelDocumentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDocuments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      contractKey
+      viewed
+      firm
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

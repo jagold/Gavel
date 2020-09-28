@@ -1,0 +1,172 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateTreatment {
+  onCreateTreatment {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTreatment {
+  onUpdateTreatment {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTreatment {
+  onDeleteTreatment {
+    id
+    username
+    name
+    provider
+    doctor
+    attorney
+    treatment
+    date
+    viewed
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateAttorney {
+  onCreateAttorney {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateAttorney {
+  onUpdateAttorney {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteAttorney {
+  onDeleteAttorney {
+    id
+    username
+    name
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateFirm {
+  onCreateFirm {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateFirm {
+  onUpdateFirm {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteFirm {
+  onDeleteFirm {
+    id
+    username
+    firm
+    current_code
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateLimitation {
+  onCreateLimitation {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateLimitation {
+  onUpdateLimitation {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteLimitation {
+  onDeleteLimitation {
+    id
+    username
+    description
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateDocument {
+  onCreateDocument {
+    id
+    username
+    contractKey
+    documentName
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateDocument {
+  onUpdateDocument {
+    id
+    username
+    contractKey
+    documentName
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteDocument {
+  onDeleteDocument {
+    id
+    username
+    contractKey
+    documentName
+    viewed
+    firm
+    createdAt
+    updatedAt
+  }
+}

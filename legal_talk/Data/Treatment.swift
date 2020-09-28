@@ -14,6 +14,7 @@ class Treatment{
     var Treatment: String
     var Provider: Provider
     var id: String?
+    var viewed: Bool?
     
     init(Doctor: Doctor, Date: Date, Treatment: String, Provider: Provider){
         self.Doctor = Doctor

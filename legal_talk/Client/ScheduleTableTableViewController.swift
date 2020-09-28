@@ -67,7 +67,7 @@ class ScheduleTableTableViewController: UITableViewController {
              fatalError("dequeued cell not an instance of DoctorTableCell")
          }
          print(globalData.futureTreatments[globalData.currentDate]?[indexPath.row].Doctor.Name)
-        cell.scheduleLabel.text = /*globalData.futureTreatments[globalData.currentDate]?[indexPath.row].Doctor.Name ?? "Unknown Doctor" + " at " +*/ globalData.stripDateFromDateString(date: (globalData.futureTreatments[globalData.currentDate]?[indexPath.row].Date)!)
+        cell.scheduleLabel.text =  globalData.stripDateFromDateString(date: (globalData.futureTreatments[globalData.currentDate]?[indexPath.row].Date)!) + " - " + (globalData.futureTreatments[globalData.currentDate]?[indexPath.row].Provider.Name)! ?? "Unknown Provider"
         
          return cell
     }

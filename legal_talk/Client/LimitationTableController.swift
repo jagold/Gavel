@@ -10,15 +10,12 @@ import UIKit
 
 class LimitationTableController: UITableViewController {
 
+    var clientName = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.title = clientName
     }
 
     // MARK: - Table view data source
@@ -56,8 +53,9 @@ class LimitationTableController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-                var popUpWindow: PopUpWindow!
+        var popUpWindow: PopUpWindow!
         popUpWindow = PopUpWindow(title: "Limitation Detail", text: globalData.limitations[indexPath.row].description, buttontext: "Dismiss")
+        
         self.present(popUpWindow, animated: true, completion: nil)
         tableView.deselectRow(at: indexPath, animated: true)
 

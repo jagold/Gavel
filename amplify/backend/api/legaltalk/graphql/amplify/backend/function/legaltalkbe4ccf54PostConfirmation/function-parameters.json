@@ -1,0 +1,17 @@
+{
+    "trigger": true,
+    "modules": [
+        "add-to-group"
+    ],
+    "parentResource": "legaltalkbe4ccf54",
+    "functionName": "legaltalkbe4ccf54PostConfirmation",
+    "resourceName": "legaltalkbe4ccf54PostConfirmation",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerDir": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/utils/../triggers/PostConfirmation",
+    "triggerTemplate": "PostConfirmation.json.ejs",
+    "roleName": "legaltalkbe4ccf54PostConfirmation",
+    "skipEdit": true,
+    "GROUP": "Client",
+    "triggerEventPath": "PostConfirmation.event.json"
+}

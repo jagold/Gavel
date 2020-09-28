@@ -1,0 +1,43 @@
+type Treatment @model {
+  id: ID!
+  username: String!
+  name: String
+  provider: String!
+  doctor: String!
+  attorney: String!
+  treatment: String
+  date: String
+  viewed: String
+}
+
+type Attorney @model {
+  id: ID!
+  username: String!
+  name: String!
+  firm: String!
+  current_code: ID
+}
+
+type Firm @model {
+  id: ID!
+  username: String!
+  firm: String!
+  current_code: ID
+
+}
+
+type Limitation @model{
+  id: ID!
+  username: String!
+  description: String!
+
+}
+
+type Document @model{
+  id: ID!
+  username: String!
+  contractKey: ID
+  documentName: String
+  viewed: String
+  firm: String!
+}

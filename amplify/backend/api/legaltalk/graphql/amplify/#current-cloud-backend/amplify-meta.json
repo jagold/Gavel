@@ -1,0 +1,183 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-legaltalk-dev-104015-authRole",
+			"UnauthRoleArn": "arn:aws:iam::298036551118:role/amplify-legaltalk-dev-104015-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::298036551118:role/amplify-legaltalk-dev-104015-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-legaltalk-dev-104015-deployment",
+			"UnauthRoleName": "amplify-legaltalk-dev-104015-unauthRole",
+			"StackName": "amplify-legaltalk-dev-104015",
+			"StackId": "arn:aws:cloudformation:us-east-1:298036551118:stack/amplify-legaltalk-dev-104015/a807e2e0-99de-11ea-8713-12cf4a8c2bc2",
+			"AmplifyAppId": "d3b7e7ets07i95"
+		}
+	},
+	"api": {
+		"legaltalk": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "Monday",
+							"apiKeyExpirationDays": "365"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "qej22hrptfep7kmudwxoj3bdou",
+				"GraphQLAPIEndpointOutput": "https://afxvqfvbb5axbc74ebbwdxapiy.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-yk24qkls5vedpc4rdqdv3bjqhu"
+			},
+			"lastPushTimeStamp": "2020-06-22T23:30:44.559Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-legaltalk-dev-104015-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apilegaltalk"
+			},
+			"lastPushDirHash": "truHqzm1VG5QePxt3s5QNRkR77Y="
+		},
+		"AdminQueries": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "legaltalkbe4ccf54",
+					"attributes": [
+						"UserPoolId"
+					]
+				},
+				{
+					"category": "function",
+					"resourceName": "AdminQueries417fe070",
+					"attributes": [
+						"Arn",
+						"Name"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-legaltalk-dev-104015-deployment/amplify-cfn-templates/api/admin-queries-cloudformation-template.json",
+				"logicalId": "apiAdminQueries"
+			},
+			"lastPushTimeStamp": "2020-06-22T23:30:42.350Z",
+			"output": {
+				"ApiName": "AdminQueries",
+				"RootUrl": "https://5e192w6h9c.execute-api.us-east-1.amazonaws.com/dev"
+			},
+			"lastPushDirHash": "40v+BIZf3pXMso9UIe81fBuIQ90="
+		}
+	},
+	"auth": {
+		"legaltalkbe4ccf54": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "legaltalkbe4ccf54PostConfirmation",
+					"triggerProvider": "Cognito",
+					"attributes": [
+						"Arn",
+						"Name"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-legaltalk-dev-104015-deployment/amplify-cfn-templates/auth/legaltalkbe4ccf54-cloudformation-template.yml",
+				"logicalId": "authlegaltalkbe4ccf54"
+			},
+			"lastPushTimeStamp": "2020-06-22T23:30:42.351Z",
+			"output": {
+				"AppClientSecret": "5g4prqfeb72q88np4vv3hjqoo0uilq5lgoedgvf3rqihh77iali",
+				"UserPoolId": "us-east-1_sIImkRQ49",
+				"AppClientIDWeb": "1pjmheuf2g22qieugvgh7upg03",
+				"AppClientID": "1cn2knhv401lgakhjvgn17d6km",
+				"IdentityPoolId": "us-east-1:edae466d-d36c-4de9-8b5c-3f5c94972d18",
+				"IdentityPoolName": "legaltalkbe4ccf54_identitypool_be4ccf54__dev",
+				"UserPoolName": "legaltalkbe4ccf54_userpool_be4ccf54"
+			},
+			"lastPushDirHash": "CSbL1cfUFIX3Vdxejr5OzLhFHHg="
+		},
+		"userPoolGroups": {
+			"service": "Cognito-UserPool-Groups",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "legaltalkbe4ccf54",
+					"attributes": [
+						"UserPoolId",
+						"AppClientIDWeb",
+						"AppClientID",
+						"IdentityPoolId"
+					]
+				}
+			],
+			"lastPushTimeStamp": "2020-06-22T23:30:42.352Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-legaltalk-dev-104015-deployment/amplify-cfn-templates/auth/template.json",
+				"logicalId": "authuserPoolGroups"
+			},
+			"output": {
+				"ClientGroupRole": "arn:aws:iam::298036551118:role/us-east-1_sIImkRQ49-ClientGroupRole",
+				"AttorneyGroupRole": "arn:aws:iam::298036551118:role/us-east-1_sIImkRQ49-AttorneyGroupRole",
+				"FirmGroupRole": "arn:aws:iam::298036551118:role/us-east-1_sIImkRQ49-FirmGroupRole"
+			},
+			"lastPushDirHash": "tHrGoKUc3vbTXslviE5/egcRmEk="
+		}
+	},
+	"function": {
+		"AdminQueries417fe070": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "legaltalkbe4ccf54",
+					"attributes": [
+						"UserPoolId"
+					]
+				}
+			],
+			"lastBuildTimeStamp": "2020-05-28T15:33:47.183Z",
+			"lastPackageTimeStamp": "2020-05-28T15:33:55.808Z",
+			"distZipFilename": "AdminQueries417fe070-37306c79647375497a4c-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-legaltalk-dev-104015-deployment/amplify-cfn-templates/function/AdminQueries417fe070-cloudformation-template.json",
+				"logicalId": "functionAdminQueries417fe070"
+			},
+			"lastPushTimeStamp": "2020-06-22T23:30:42.354Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:298036551118:function:AdminQueries417fe070-dev",
+				"Name": "AdminQueries417fe070-dev",
+				"LambdaExecutionRole": "AdminQueries417fe070LambdaRole-dev"
+			},
+			"lastPushDirHash": "ElzB9TOQp76mozA8K6N9OIktnHg="
+		},
+		"legaltalkbe4ccf54PostConfirmation": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"lastBuildTimeStamp": "2020-06-13T01:51:26.754Z",
+			"lastPackageTimeStamp": "2020-06-13T01:51:27.080Z",
+			"distZipFilename": "legaltalkbe4ccf54PostConfirmation-4e73785a4e3162595a74-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-legaltalk-dev-104015-deployment/amplify-cfn-templates/function/legaltalkbe4ccf54PostConfirmation-cloudformation-template.json",
+				"logicalId": "functionlegaltalkbe4ccf54PostConfirmation"
+			},
+			"lastPushTimeStamp": "2020-06-22T23:30:42.355Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:298036551118:function:legaltalkbe4ccf54PostConfirmation-dev",
+				"Name": "legaltalkbe4ccf54PostConfirmation-dev",
+				"LambdaExecutionRole": "legaltalkbe4ccf54PostConfirmation-dev"
+			},
+			"lastPushDirHash": "SjK9+W6sjzKfow8seAJVoJKSNFw="
+		}
+	}
+}

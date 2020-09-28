@@ -7,21 +7,21 @@
 //
 
 import UIKit
-
 class NewClient: UIViewController, UITextFieldDelegate {
 
     //MARK: Properties
     var server_action = server_handler()
 
+    @IBOutlet weak var newClientLabel: UILabel!
     @IBOutlet weak var ClientCode: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+       // newClientLabel.layer.cornerRadius = 12
         globalData.randomString(length: 10)
         server_action.updateCode(currentCode: globalData.currrent_code)
-        ClientCode.text = "Client sign-up ID: " + globalData.currrent_code
+        ClientCode.text = globalData.currrent_code
     }
     
 
