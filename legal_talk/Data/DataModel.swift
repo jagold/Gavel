@@ -58,10 +58,10 @@ class DataModel{
     func loadSampleDocs(){
         let nullDoc = Doctor(Name: "Select A Doctor",  Specialty: "None", Provider: Provider(Name: "", Address: "", Phone: ""))
         self.Doctors += [nullDoc]
-
+        
     }
-   
-
+    
+    
     
     //Date object to form mm/dd/yyyy, hh:mm AM/PM
     func dateToString(Date: Date) -> String{
@@ -80,7 +80,7 @@ class DataModel{
         dateFormatter.dateStyle = .short
         
         dateFormatter.timeStyle = .short
-    
+        
         let date =  dateFormatter.date(from:stringDate)!
         
         let calendar = Calendar.current
@@ -143,22 +143,22 @@ class DataModel{
         let doctorData = Data(replacedDoctor.utf8)
         
         print("Is serializable")
-      //  print(JSONSerialization.isValidJSONObject(doctorData))
+        //  print(JSONSerialization.isValidJSONObject(doctorData))
         
         let string = "[{\"form_id\":3465,\"canonical_name\":\"df_SAWERQ\",\"form_name\":\"Activity 4 with Images\",\"form_desc\":null}]"
         let data = string.data(using: .utf8)!
         
         print(JSONSerialization.isValidJSONObject(string))
         
-      //  let doctor = (try? JSONSerialization.jsonObject(with: NSDoctor)) as? Dictionary<String,Any>
+        //  let doctor = (try? JSONSerialization.jsonObject(with: NSDoctor)) as? Dictionary<String,Any>
         
         
-       // let doctorObject = Doctor(Name: doctor!["Name"] as! String, Specialty: doctor!["Specialty"] as! String, Provider: JSONtoprovider(providerJSON: doctor!["Provider"] as! String))
-            print("Provider: ")
+        // let doctorObject = Doctor(Name: doctor!["Name"] as! String, Specialty: doctor!["Specialty"] as! String, Provider: JSONtoprovider(providerJSON: doctor!["Provider"] as! String))
+        print("Provider: ")
         
-       // print(doctor?["Provider"] as! String)
-            return Doctor(Name: "", Specialty: "", Provider: Provider(Name: "", Address: "", Phone: ""))
-    
+        // print(doctor?["Provider"] as! String)
+        return Doctor(Name: "", Specialty: "", Provider: Provider(Name: "", Address: "", Phone: ""))
+        
         
     }
     
@@ -173,11 +173,11 @@ class DataModel{
         let provider = try? JSONSerialization.jsonObject(with: providerData!, options: [.allowFragments]) as? [Dictionary<String,Any>]
         
         var providerObject = Provider(Name: provider![0]["Name"] as! String, Address: provider![0]["Address"] as! String, Phone: provider![0]["Phone"] as! String)
-            
-            return providerObject
+        
+        return providerObject
         
         
-            
+        
     }
     
     /*
@@ -195,7 +195,7 @@ class DataModel{
      Random string for the attorney/firm code
      */
     func randomString(length: Int)  {
-      let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         self.currrent_code = String((0..<length).map{ _ in letters.randomElement()! })
         
     }

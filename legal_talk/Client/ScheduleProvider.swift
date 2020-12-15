@@ -9,25 +9,25 @@
 import UIKit
 
 class ScheduleProvider: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
-
     
-
+    
+    
     @IBOutlet weak var providerPicker: UIPickerView!
     var selectedProvider = Provider(Name: "", Address: "", Phone: "")
     var scheduledDate = Date()
     var pickedOnce = false
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         providerPicker.delegate = self
         providerPicker.dataSource = self
         
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -55,23 +55,23 @@ class ScheduleProvider: UIViewController,UIPickerViewDelegate, UIPickerViewDataS
             newProvider.isSchedule = true
             newProvider.dateInput = self.scheduledDate
             
-     
+            
             
         default:
             fatalError("NO hits on segue")
         }
         
     }
-     
     
     
-     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-         1
-     }
-     
-     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return globalData.Providers.count
-     }
+    }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
@@ -87,8 +87,8 @@ class ScheduleProvider: UIViewController,UIPickerViewDelegate, UIPickerViewDataS
     }
     
     @IBAction func pressSave(_ sender: Any) {
-
-   
+        
+        
     }
     
     

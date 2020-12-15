@@ -9,7 +9,7 @@
 import UIKit
 
 class UserSetUp: UIViewController {
-     
+    
     override func viewDidLoad() {
         navigationItem.hidesBackButton = true  
         super.viewDidLoad()
@@ -17,10 +17,10 @@ class UserSetUp: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -30,7 +30,7 @@ class UserSetUp: UIViewController {
             guard let setUpAttorney = segue.destination as? AttorneySetUp else{
                 fatalError("unexpected destination")
             }
-        
+            
         case "toClientSetUp":
             guard let clientSetUp = segue.destination as? ClientSetUp else{
                 fatalError("Unexpected destination")
@@ -41,15 +41,15 @@ class UserSetUp: UIViewController {
             
         case "toFirmSetUp":
             guard let firmSetUp = segue.destination as? FirmSetUp else {
-                    fatalError("Unexpected destination")
-
+                fatalError("Unexpected destination")
+                
             }
-        
+            
             
         default:
             fatalError("NO hits on segue")
         }
     }
     
-
+    
 }

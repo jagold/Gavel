@@ -12,20 +12,20 @@ class DateInput: UIViewController {
     
     var DoctorInput = Doctor(Name: "", Specialty: "", Provider: Provider(Name: "", Address: "", Phone: ""))
     var ProviderInput = Provider(Name: "", Address: "", Phone: "")
-   // var DateInput = Date()
+    // var DateInput = Date()
     
     @IBOutlet weak var datePicker: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)

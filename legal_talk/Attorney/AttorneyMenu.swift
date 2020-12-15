@@ -9,7 +9,7 @@
 import UIKit
 import AWSAppSync
 class AttorneyMenu: UIViewController {
-
+    
     //MARK: Properties
     @IBOutlet weak var clientListButton: UIButton!
     @IBOutlet weak var registerNewClientButton: UIButton!
@@ -37,10 +37,10 @@ class AttorneyMenu: UIViewController {
         
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier ?? ""{
@@ -59,17 +59,17 @@ class AttorneyMenu: UIViewController {
         default:
             fatalError("No valid destination")
         }
-              
+        
         
     }
     
     @IBAction func unwindToAttorneyMenu(sender: UIStoryboardSegue){
         
-    
+        
         
     }
-        
+    
 }
-    
-    
+
+
 

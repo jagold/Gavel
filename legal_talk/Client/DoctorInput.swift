@@ -9,7 +9,7 @@
 import UIKit
 
 class DoctorInput: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate{
-
+    
     var DoctorInput = Doctor(Name: "", Specialty: "", Provider: Provider(Name: "", Address: "", Phone: ""))
     var ProviderInput = Provider(Name: "", Address: "", Phone: "")
     var triggeredPicker = false
@@ -23,7 +23,7 @@ class DoctorInput: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         
         tempDoctorList = globalData.Doctors.filter{$0.Provider.Name == ProviderInput.Name}
         
-
+        
         
         print(tempDoctorList.count)
         
@@ -36,7 +36,7 @@ class DoctorInput: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
     }
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -86,16 +86,16 @@ class DoctorInput: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         return tempDoctorList.count
     }
     
-      func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-            
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
         if(tempDoctorList.count == 0){
             return NSAttributedString(string: "No Doctors")
         }else{
-          return NSAttributedString(string: tempDoctorList[row].Name)
+            return NSAttributedString(string: tempDoctorList[row].Name)
             
         }
-          
-      }
+        
+    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
@@ -115,5 +115,5 @@ class DoctorInput: UIViewController, UIPickerViewDataSource, UIPickerViewDelegat
         viewDidLoad()
         
     }
-
+    
 }

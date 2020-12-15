@@ -9,7 +9,7 @@
 import UIKit
 
 class TreatmentDescriptionInput: UIViewController, UITextViewDelegate {
-
+    
     @IBOutlet weak var treatmentTextView: UITextView!
     var DoctorInput = Doctor(Name: "", Specialty: "", Provider: Provider(Name: "", Address: "", Phone: ""))
     var ProviderInput = Provider(Name: "", Address: "", Phone: "")
@@ -50,7 +50,7 @@ class TreatmentDescriptionInput: UIViewController, UITextViewDelegate {
     
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -69,12 +69,12 @@ class TreatmentDescriptionInput: UIViewController, UITextViewDelegate {
             
             self.server_action.insertTreatment(Username: globalData.user, Doctor: globalData.doctorToCSV(Doctor: self.DoctorInput), Treatment: self.TreatmentInput, Date: globalData.dateToString(Date: self.DateInput), Attorney: globalData.firm, Name: globalData.name, Provider: globalData.providerToCSV(provider:self.ProviderInput))
             
-                        
+            
         default:
             fatalError("NO hits on segue")
         }
-
+        
     }
     
-
+    
 }

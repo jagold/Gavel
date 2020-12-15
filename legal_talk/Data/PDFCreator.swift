@@ -65,8 +65,8 @@ class PDFCreator: NSObject {
         //1
         let pdfMetaData = [
           kCGPDFContextCreator: "PDF Creator",
-          kCGPDFContextAuthor: "Pratik Sodha",
-          kCGPDFContextTitle: "My PDF"
+            kCGPDFContextAuthor: globalData.user,
+          kCGPDFContextTitle: "Client History PDF"
         ]
 
         //2

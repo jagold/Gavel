@@ -24,16 +24,16 @@ class LogLimitation: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         logLimitationText.delegate = self
-
-//        self.saveButton.layer.cornerRadius = 5
-//        self.saveButton.layer.borderWidth = 1
+        
+        //        self.saveButton.layer.cornerRadius = 5
+        //        self.saveButton.layer.borderWidth = 1
         
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -50,7 +50,7 @@ class LogLimitation: UIViewController, UITextViewDelegate {
             
             self.server_action.insert_limitation(Limitation: self.logLimitationText.text)
             
-
+            
             
         default:
             fatalError("NO hits on segue")
@@ -78,5 +78,5 @@ class LogLimitation: UIViewController, UITextViewDelegate {
         }
         return true
     }
-
+    
 }

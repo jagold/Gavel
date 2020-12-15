@@ -14,7 +14,7 @@ class DocCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         
     }
     

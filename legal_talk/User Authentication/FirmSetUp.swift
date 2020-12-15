@@ -9,7 +9,7 @@
 import UIKit
 
 class FirmSetUp: UIViewController, UITextFieldDelegate {
-
+    
     var server_action = server_handler()
     @IBOutlet weak var firmName: UITextField!
     
@@ -18,10 +18,10 @@ class FirmSetUp: UIViewController, UITextFieldDelegate {
         firmName.delegate = self
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -31,9 +31,9 @@ class FirmSetUp: UIViewController, UITextFieldDelegate {
             guard let firmMenu = segue.destination as? FirmMenu else{
                 fatalError("unexpected destination")
             }
-
-        
-
+            
+            
+            
             
         default:
             fatalError("NO hits on segue")

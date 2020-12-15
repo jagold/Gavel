@@ -8,26 +8,26 @@
 
 import UIKit
 class NewClient: UIViewController, UITextFieldDelegate {
-
+    
     //MARK: Properties
     var server_action = server_handler()
-
+    
     @IBOutlet weak var newClientLabel: UILabel!
     @IBOutlet weak var ClientCode: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       // newClientLabel.layer.cornerRadius = 12
+        
+        // newClientLabel.layer.cornerRadius = 12
         globalData.randomString(length: 10)
         server_action.updateCode(currentCode: globalData.currrent_code)
         ClientCode.text = globalData.currrent_code
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -49,5 +49,6 @@ class NewClient: UIViewController, UITextFieldDelegate {
         }
     }
     
-
+    
 }
+

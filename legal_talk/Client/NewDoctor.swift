@@ -9,7 +9,7 @@
 import UIKit
 
 class NewDoctor: UIViewController, UITextFieldDelegate {
-
+    
     
     var provider = Provider(Name: "", Address: "", Phone: "")
     @IBOutlet weak var nameField: UITextField!
@@ -27,10 +27,10 @@ class NewDoctor: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier ?? ""{
@@ -59,12 +59,12 @@ class NewDoctor: UIViewController, UITextFieldDelegate {
                 let newDoctor = Doctor(Name: self.nameField.text ?? "No Name",  Specialty: self.specialtyField.text ?? "No Specialty", Provider: self.provider)
                 
                 globalData.Doctors.append(newDoctor)
-
+                
                 server_action.insertTreatment(Username: globalData.user, Doctor: globalData.doctorToCSV(Doctor: newDoctor), Treatment: "Future Treatment", Date: globalData.dateToString(Date:self.dateInput), Attorney: globalData.firm, Name: globalData.name, Provider: globalData.providerToCSV(provider:self.provider))
                 
                 
             }
-
+            
         default:
             fatalError("No valid destination")
         }
@@ -79,13 +79,13 @@ class NewDoctor: UIViewController, UITextFieldDelegate {
         return true
     }
     
-
+    
     @IBAction func pressSave(_ sender: Any) {
         
         
-      //  let newDoc = Doctor(Name: self.nameField.text ?? "No Name",  Specialty: self.specialtyField.text ?? "No Specialty", Provider: self.provider)
+        //  let newDoc = Doctor(Name: self.nameField.text ?? "No Name",  Specialty: self.specialtyField.text ?? "No Specialty", Provider: self.provider)
         
-      //  globalData.Doctors.append(newDoc)
+        //  globalData.Doctors.append(newDoc)
         
         
         if(self.isSchedule == false){
@@ -97,9 +97,9 @@ class NewDoctor: UIViewController, UITextFieldDelegate {
             let newDoctor = Doctor(Name: self.nameField.text ?? "No Name",  Specialty: self.specialtyField.text ?? "No Specialty", Provider: self.provider)
             
             globalData.Doctors.append(newDoctor)
-
+            
             server_action.insertTreatment(Username: globalData.user, Doctor: globalData.doctorToCSV(Doctor: newDoctor), Treatment: "Future Treatment", Date: globalData.dateToString(Date:self.dateInput), Attorney: globalData.firm, Name: globalData.name, Provider: globalData.providerToCSV(provider:self.provider))
-
+            
         }
         
     }

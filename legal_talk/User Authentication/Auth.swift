@@ -12,7 +12,7 @@ import AWSMobileClient
 class Auth: UIViewController {
     
     var server_action = server_handler()
-
+    
     var attorney = String()
     var attorneyFirm = String()
     var firmFirm = String()
@@ -21,15 +21,15 @@ class Auth: UIViewController {
         super.viewDidLoad()
         
         initializeAWSMobileClient()
-       
+        
         
     }
     
-
+    
     
     // MARK: - Navigation
-
-
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         
@@ -38,7 +38,7 @@ class Auth: UIViewController {
             guard let setUpUser = segue.destination as? UserSetUp else{
                 fatalError("unexpected destination")
             }
-        
+            
         case "toClientMenu":
             guard let clientMenu = segue.destination as? UITabBarController else{
                 fatalError("Unexpected destination")
@@ -53,7 +53,7 @@ class Auth: UIViewController {
             guard let AttorneyMenu = segue.destination as? UITabBarController else{
                 fatalError("Unexpected Destination")
             }
-
+            
             globalData.attorney = self.attorney
             
             globalData.firm = self.attorneyFirm
@@ -87,13 +87,13 @@ class Auth: UIViewController {
     func initializeAWSMobileClient(){
         
         
-    
+        
         AWSMobileClient.default().initialize{ (userState, error) in
             
             switch(userState){
             case .signedOut:
                 AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, signInUIOptions: SignInUIOptions(canCancel:false, logoImage: #imageLiteral(resourceName: "Gavel") /*UIImage(named: "hammer-1.png")*/, backgroundColor: UIColor.white, secondaryBackgroundColor: UIColor.black, primaryColor: UIColor.orange, disableSignUpButton: false)){userName, error  in
-
+                    
                     
                     
                     globalData.user = AWSMobileClient.default().username!
@@ -122,11 +122,11 @@ class Auth: UIViewController {
                         }
                     }
                     
-
-
-                    }
                     
-
+                    
+                }
+                
+                
             default:
                 
                 print("No hit")
@@ -137,7 +137,7 @@ class Auth: UIViewController {
     
     
     func showSignIn(completion: @escaping (String) ->Void) {
-    
+        
         AWSMobileClient.default().showSignIn(navigationController: self.navigationController!, {(userState, error) in
             if (error == nil){
                 completion(AWSMobileClient.default().username ?? "")
@@ -146,9 +146,9 @@ class Auth: UIViewController {
             
             
         })
-            
+        
     }
-     
+    
     
     
     func getClientType(){
@@ -156,38 +156,38 @@ class Auth: UIViewController {
         
         self.group.enter()
         self.server_action.fetchTreatmentHistory(userName: globalData.user){treatmentArray,missedList, doctorList, attorney, name, providers  in
-                  
-                  //Will also have Providers
-                  globalData.Treatments = treatmentArray
-                  globalData.Doctors = doctorList
-                  globalData.attorney = attorney
-                  globalData.firm = attorney
-                  globalData.name = name
-                  globalData.Providers = providers
-                  print("second provider list: ")
-                  print(globalData.Providers.count)
-                  globalData.Treatments.reverse()
-                  globalData.Doctors.reverse()
-                  globalData.MissedTreatments = missedList
-                  self.group.leave()
-
-                      
-              }
-                  
-        self.group.enter()
-              self.server_action.retrieveAttorney(username: globalData.user){ attorney, firm in
+            
+            //Will also have Providers
+            globalData.Treatments = treatmentArray
+            globalData.Doctors = doctorList
+            globalData.attorney = attorney
+            globalData.firm = attorney
+            globalData.name = name
+            globalData.Providers = providers
+            print("second provider list: ")
+            print(globalData.Providers.count)
+            globalData.Treatments.reverse()
+            globalData.Doctors.reverse()
+            globalData.MissedTreatments = missedList
+            self.group.leave()
+            
+            
+        }
         
-                
-                self.attorney = attorney
-                self.attorneyFirm = firm
-                if(attorney != "Nil" && firm != "Nil"){
-                    globalData.attorney = attorney
-                    globalData.firm = firm
-                }
-                self.group.leave()
-
-                  
-              }
+        self.group.enter()
+        self.server_action.retrieveAttorney(username: globalData.user){ attorney, firm in
+            
+            
+            self.attorney = attorney
+            self.attorneyFirm = firm
+            if(attorney != "Nil" && firm != "Nil"){
+                globalData.attorney = attorney
+                globalData.firm = firm
+            }
+            self.group.leave()
+            
+            
+        }
         
         self.group.enter()
         self.server_action.retrieveFirm(userName: globalData.user){firm in
@@ -199,10 +199,10 @@ class Auth: UIViewController {
             
             
         }
-
+        
     }
     
     
-
+    
     
 }

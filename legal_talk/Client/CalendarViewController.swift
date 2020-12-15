@@ -22,10 +22,10 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         calendar.dataSource = self
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     
     
@@ -34,14 +34,14 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("SEGUE")
         print(segue.identifier!)
-      if (segue.identifier!) == "embedSegueSchedule" {
-        if let childVC = segue.destination as? ScheduleTableTableViewController {
-          //Some property on ChildVC that needs to be set
-            childVC.tableView.reloadData()
+        if (segue.identifier!) == "embedSegueSchedule" {
+            if let childVC = segue.destination as? ScheduleTableTableViewController {
+                //Some property on ChildVC that needs to be set
+                childVC.tableView.reloadData()
+            }
         }
-      }
     }
- 
+    
     
     
     
@@ -58,7 +58,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         vc.currentDate = globalData.currentDate
         vc.tableView.reloadData()
         
-       // self.performSegue(withIdentifier: "embedSegueSchedule", sender: nil)
+        // self.performSegue(withIdentifier: "embedSegueSchedule", sender: nil)
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
@@ -69,7 +69,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         return globalData.futureTreatments[globalData.stripTimeFromDateString(date: globalData.dateToString(Date: date))]?.count ?? 0
         
         
-
+        
     }
-
+    
 }

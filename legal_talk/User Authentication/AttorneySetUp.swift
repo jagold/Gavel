@@ -19,13 +19,13 @@ class AttorneySetUp: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.enterFirm.delegate = self
         self.enterName.delegate = self
-
+        
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -48,11 +48,11 @@ class AttorneySetUp: UIViewController, UITextFieldDelegate {
         
     }
     
-
+    
     //MARK: Text Field Delegate
-     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-         //Hide keyboard
-         textField.resignFirstResponder()
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Hide keyboard
+        textField.resignFirstResponder()
         
         if(self.activeText == enterFirm){
             /*
@@ -71,27 +71,27 @@ class AttorneySetUp: UIViewController, UITextFieldDelegate {
             }
         }
         
-         return true
-     }
-     
-     
-     func textFieldDidEndEditing(_ textField: UITextField) {
-         //Change label to what was entered
-        // updateSaveButtonState()
-         self.resignFirstResponder()
-         if textField.text == ""{
-             Go.isEnabled = false
-         }else{
-             Go.isEnabled = true
-         }
-         
-     }
-     
-     
+        return true
+    }
     
-     func textFieldDidBeginEditing(_ textField: UITextField) {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //Change label to what was entered
+        // updateSaveButtonState()
+        self.resignFirstResponder()
+        if textField.text == ""{
+            Go.isEnabled = false
+        }else{
+            Go.isEnabled = true
+        }
+        
+    }
+    
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         self.activeText = textField
-         Go.isEnabled = false
-     }
+        Go.isEnabled = false
+    }
     
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class ProviderInput: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
+    
     
     
     var ProviderInput = Provider(Name: "", Address: "", Phone: "")
@@ -30,10 +30,10 @@ class ProviderInput: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
             self.performSegue(withIdentifier: "toNewProvider", sender: nil)
         }
     }
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -44,7 +44,7 @@ class ProviderInput: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 fatalError("Unexpected destination")
             }
             
-
+            
             
             if(self.triggeredPicker == false){
                 doctorInput.ProviderInput = globalData.Providers[0]
@@ -52,7 +52,7 @@ class ProviderInput: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
                 doctorInput.ProviderInput = self.ProviderInput
             }
             
-
+            
             
         case "toNewProvider":
             guard let newProvider = segue.destination as? NewProvider else{
@@ -65,7 +65,7 @@ class ProviderInput: UIViewController, UIPickerViewDataSource, UIPickerViewDeleg
         }
     }
     
-
+    
     //MARK: UIPicker
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

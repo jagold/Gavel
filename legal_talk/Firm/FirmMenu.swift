@@ -17,10 +17,10 @@ class FirmMenu: UIViewController {
         
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -30,8 +30,8 @@ class FirmMenu: UIViewController {
             guard let generateCode = segue.destination as? GenerateFirmCode else{
                 fatalError("unexpected destination")
             }
-        
-        
+            
+            
         case "toAttorneyList":
             guard let attorneyList = segue.destination as? ListAttorneysTable else{
                 fatalError("unexpected destination")
@@ -42,5 +42,5 @@ class FirmMenu: UIViewController {
         }
     }
     
-
+    
 }

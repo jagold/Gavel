@@ -12,7 +12,7 @@ class ClientInfo: UIViewController {
     
     var clientUsername = String()
     var server_action = server_handler()
-
+    
     
     @IBOutlet weak var clientName: UILabel!
     var nameLabel: String?
@@ -38,10 +38,10 @@ class ClientInfo: UIViewController {
         
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
@@ -53,10 +53,10 @@ class ClientInfo: UIViewController {
             }
             
             
-    
+            
             clientHistory.currentClient = self.clientUsername
             
-
+            
         case "toLimitations":
             guard let limitationHistory = segue.destination as? LimitationTableController else{
                 fatalError("Unexpected destination")
@@ -75,11 +75,11 @@ class ClientInfo: UIViewController {
             }
             
             generatePDF.documentData = PDFCreator().prepareData()
-
+            
         default:
             fatalError("NO hits on segue")
         }
     }
     
-
+    
 }

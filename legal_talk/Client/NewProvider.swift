@@ -9,7 +9,7 @@
 import UIKit
 
 class NewProvider: UIViewController, UITextFieldDelegate {
-
+    
     var server_action = server_handler()
     
     @IBOutlet weak var nameField: UITextField!
@@ -30,28 +30,28 @@ class NewProvider: UIViewController, UITextFieldDelegate {
         }else{
             navigationItem.hidesBackButton = false
         }
-
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier ?? ""{
-   
-            
+        
+        
         case "toNewDoctor":
-           // guard let ProviderInput = segue.destination as? ProviderInput else{
-           //     fatalError("Unexpected Destination")
-          //  }
-
+            // guard let ProviderInput = segue.destination as? ProviderInput else{
+            //     fatalError("Unexpected Destination")
+            //  }
+            
             guard let newDoctor = segue.destination as? NewDoctor else{
                 fatalError("Unexpected destination")
             }
-
+            
             let newProvider = Provider(Name: self.nameField.text ?? "No name", Address: self.addressField.text ?? "No Address", Phone: self.phoneField.text ?? "No Phone")
             
             
@@ -60,10 +60,10 @@ class NewProvider: UIViewController, UITextFieldDelegate {
             globalData.Providers.append(newProvider)
             
             
-          
+            
             newDoctor.isSchedule = self.isSchedule
-        
-
+            
+            
         default:
             fatalError("No valid destination")
         }
@@ -90,7 +90,7 @@ class NewProvider: UIViewController, UITextFieldDelegate {
      need to do the unwind thing
      */
     
-
+    
     
     
 }
