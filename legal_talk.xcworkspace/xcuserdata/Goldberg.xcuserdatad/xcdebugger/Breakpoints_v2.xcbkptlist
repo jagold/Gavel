@@ -139,8 +139,8 @@
             filePath = "legal_talk/Data/DataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "doctorToJSON(Doctor:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -155,10 +155,10 @@
             filePath = "legal_talk/Data/DataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "JSONtoprovider(providerJSON:)"
-            landmarkType = "7">
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "DataModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -171,8 +171,8 @@
             filePath = "legal_talk/Data/DataModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "JSONtodoctor(doctorJSON:)"
             landmarkType = "7">
          </BreakpointContent>
