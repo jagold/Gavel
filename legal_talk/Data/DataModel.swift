@@ -8,7 +8,7 @@
 
 import Foundation
 
-//test change
+//test change 2
 
 class DataModel{
     
@@ -41,7 +41,7 @@ class DataModel{
         self.Providers = [Provider]()
         self.Treatments = [Treatment]()
         self.MissedTreatments = [Treatment]()
-        self.user = "Jack21Goldberg" //After authentication, make this the client username
+        self.user = "Jack2 1Goldberg" //After authentication, make this the client username
         self.currrent_code = ""
         self.attorney = ""
         self.name = ""
